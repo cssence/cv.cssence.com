@@ -75,6 +75,13 @@ html { background: url(gravel.png) repeat #FFF; color: #444; }
 [role="banner"] .title { font-size: 200%; font-weight: normal; }
 [role="banner"] .description { margin: -1.67em 0 1.67em; font-size: 100%; }
 
+#social li a:before { content: '\00A0'; display: inline-block; margin-right: 0.5em; width: 24px; background: url(social.png) -125px center no-repeat; }
+#social li a[href*="linkedin"]:before { background-position: 0 center; }
+#social li a[href*="xing"]:before { background-position: -25px center; }
+#social li a[href*="gplus"]:before { background-position: -50px center; }
+#social li a[href*="facebook"]:before { background-position: -75px center; }
+#social li a[href*="twitter"]:before { background-position: -100px center; }
+
 /* non-semantic helper classes */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .ir br { display: none; }
@@ -125,7 +132,7 @@ html { background: url(gravel.png) repeat #FFF; color: #444; }
 	[role="main"] article li { margin: 0.5em 0; }
 
 	#social li a b { display: inline-block; width: 6em; font-weight: normal; }
-	#social li a:after { content: ' ' attr(href); color: #444; letter-spacing: -1px; }
+	#social li a:after { content: ' ' attr(href); color: #444; }
 	.tag { margin-left: 1em; color: #AAA; font-size: 70%; }
 
 	body { margin-bottom: 5em; }
@@ -143,7 +150,7 @@ html { background: url(gravel.png) repeat #FFF; color: #444; }
 	[role="navigation"] a { padding: 0.25em 0.7em; }
 
 	#social li a b { display: inline; }
-	#social li a:after { content: ' ' attr(data-short-uri); }
+	#social li a:after { content: ' ' attr(data-short-uri); margin-left: 0.33em; }
 
 }
 
