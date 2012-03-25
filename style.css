@@ -55,8 +55,6 @@ input:invalid, textarea:invalid { background-color: #F0DDDD; }
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
-.tag:before { content: '#'; }
-
 @media only screen {
 
 	.print { display: none; }
@@ -94,7 +92,7 @@ td { vertical-align: top; }
 
 	[role="main"] h3 { margin-top: 2.5em; border-bottom: 1px dotted #AAA; }
 
-	[role="main"] article li { margin: 0.5em 0; }
+	[role="main"] article li { margin: 0.75rem 0; }
 
 	#social ul { margin-left: 1em; }
 	#social li a:before { content: '\00A0'; display: inline-block; margin-left: -2px; margin-right: 0.75em; width: 24px; background: url(social.png) -125px center no-repeat; }
@@ -103,9 +101,8 @@ td { vertical-align: top; }
 	#social li a[href*="gplus"]:before { background-position: -50px center; }
 	#social li a[href*="facebook"]:before { background-position: -75px center; }
 	#social li a[href*="twitter"]:before { background-position: -100px center; }
-	#social li a b { font-weight: normal; }
+	#social li a b { display: inline-block; width: 5em; font-weight: normal; }
 	#social li a:after { content: ' ' attr(data-short-uri); margin-left: 0.33em; color: #444; }
-	#social li .tag { margin-left: 0.5em; color: #AAA; font-size: 70%; }
 
 	[role="contentinfo"] { margin-top: 3em; padding: 1rem 0; background-color: #FFF; }
 	[role="contentinfo"] .legal { margin-top: 0; margin-bottom: 0; }
@@ -120,7 +117,6 @@ td { vertical-align: top; }
 
 	[role="navigation"] a { padding: 0.25em 1em; }
 
-	#social li a b { display: inline-block; width: 5em; }
 	#social li a:after { content: ' ' attr(href); }
 
 }
@@ -162,7 +158,6 @@ td { vertical-align: top; }
 	[role="main"] article { width: 44rem; }
 	[role="main"] article:first-child { float: right; width: 20rem; }
 
-	#social li a b { display: inline; width: auto; }
 	#social li a:after { content: ' ' attr(data-short-uri); }
 
 }
@@ -175,7 +170,6 @@ td { vertical-align: top; }
 	[role="main"] article:nth-child(odd) { float: right; }
 	[role="main"] article:nth-child(even) { float: left; }
 
-	#social li a b { display: inline-block; width: 5em; }
 	#social li a:after { content: ' ' attr(href); }
 
 }
