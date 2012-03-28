@@ -12,7 +12,8 @@
   <meta name="MobileOptimized" content="320"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!--[if gte IE 9 ]><!-- -->
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" title="Standard (responsive)"/>
+  <link rel="alternate stylesheet" href="oldie.css" media="screen" title="Internet Explorer &lt; 9"/>
   <!--<![endif]--><!--[if lt IE 9 ]><link rel="stylesheet" href="oldie.css" media="screen"/><![endif]-->
   <link rel="apple-touch-icon" sizes="114x114" href="icon114.png"/>
   <link rel="apple-touch-icon" sizes="72x72" href="icon072.png"/>
@@ -23,7 +24,7 @@
  </head>
  <body>
   <header role="banner">
-   <div class="content cf">
+   <div id="top" class="content cf">
     <p class="url"><a rel="home" href="http://matthias.beitl.net/"><b>m</b><b>a</b><b>t</b><b>t</b>hias.beitl.net</a></p>
     <hr class="print"/>
     <div class="photo screen"><img alt="" src="icon114.jpg"/></div>
@@ -38,7 +39,7 @@
     </nav>
    </div>
   </header>
-  <div role="main" class="content cf">
+  <div role="main" id="content" class="content cf">
    <article id="social">
     <h3>Social</h3>
     <nav>
