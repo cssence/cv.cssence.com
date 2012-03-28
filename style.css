@@ -59,7 +59,7 @@ td { vertical-align: top; }
 
 	.print { display: none; }
 
-	html { background: url(gravel.png) repeat #FFF; color: #444; }
+	html { color: #444; }
 
 	nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -69,6 +69,9 @@ td { vertical-align: top; }
 	blockquote:after { content: '\201D'; margin-left: 0.1em; }
 
 	.content { position: relative; max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+
+	html,
+	[role="navigation"] ul { background: url(gravel.gif) repeat #F0F0F0; color: #444; }
 
 	[role="navigation"],
 	[role="main"] { text-shadow: 0 1px #FFF; }
@@ -84,7 +87,7 @@ td { vertical-align: top; }
 	[role="banner"] .description { margin-left: 146px; text-shadow: 0 0 2px #000; }
 	[role="banner"] .photo { position: absolute; left: 2rem; top: -6px; border: 3px solid #FFF; } 
 
-	[role="navigation"] ul { position: relative; float: left; bottom: -3px; padding-bottom: 3px; border: 3px solid #FFF; border-bottom: none; background: url(gravel.png) repeat #FFF; font-weight: bold; }
+	[role="navigation"] ul { position: relative; float: left; bottom: -3px; padding-bottom: 3px; border: 3px solid #FFF; border-bottom: none; font-weight: bold; }
 	[role="navigation"] li { float: left; font-size: 1rem; text-transform: uppercase; }
 	[role="navigation"] a:before { content: '#'; display: inline-block; width: 0.75em; color: #AAA; }
 	[role="navigation"] a:hover:before { content: '\2193'; color: #444; }
