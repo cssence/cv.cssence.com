@@ -71,7 +71,7 @@ td { vertical-align: top; }
 	.content { position: relative; max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
 
 	html,
-	[role="navigation"] ul { background: url(gravel.gif) repeat #F0F0F0; color: #444; }
+	[role="navigation"] ul { background: url(gravel.png) repeat #F0F0F0; color: #444; }
 
 	[role="navigation"],
 	[role="main"] { text-shadow: 0 1px #FFF; }
