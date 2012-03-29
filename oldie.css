@@ -18,7 +18,7 @@ a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 abbr[title] { border-bottom: 1px dotted; cursor: help; }
 b, strong { font-weight: bold; }
-blockquote { margin: 1em 0; padding-left: 32px; border-left:4px solid #EE8B11; font-style: italic; }
+blockquote { margin: 1em 0; padding-left: 32px; border-left:4px solid #F3AA51; font-style: italic; }
 dfn { font-style: italic; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #696969; margin: 1em 0; padding: 0; }
 ins { background: #ff9; color: #000; text-decoration: none; }
