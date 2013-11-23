@@ -5,330 +5,49 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Matthias Beitl</title>
 		<meta name="description" content="Virtual home sweet home of web developer Matthias Beitl. His brain waves broadcast from Vienna, Austria.">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="Matthias Beitl">
-		<meta name="revisit-after" content="14 days">
 		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.jpg">
 		<link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-		<!--link rel="stylesheet" href="//fonts.googleapis.com/css?family=Just+Another+Hand|Anton"/-->
-		<link rel="stylesheet" href="fonts.css">
-		<style media="screen">
-*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
-html,body{margin:0;padding:0}
-html {
-	height:100%;
-	background: #333;
-	color: #fff;
-	font:16px/1.4 sans-serif;
-}
-body {
-	min-height:100%;
-	background: rgba(186,218,85,0.67);
-}
-h1{margin:1.125rem 0 0;font-size:1.5em}
-h2{margin:0;font-size:1.25em;font-weight:normal}
-ul{list-style:none;list-style-image:none;margin:0;padding:0}
-a{color:#4f4840;text-decoration:none}
-a:hover{color:#5d6d2b;text-decoration:underline}
-.photo{width:6rem;height:6rem}
-img{max-width:100%}
-
-.vcard,
-nav li {
-	background: #fff;
-	color: #222;
-	box-shadow: 0 0.125em 0.25em rgba(60,60,60,0.5);
-}
-
-#vcard {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 20em;
-	bottom: 0;
-}
-
-.vcard {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 28rem;
-	height: 15.75rem;
-	margin: -7.875rem 0 0 -14rem;
-	padding: 2rem 2rem 2rem 10rem;
-}
-.photo {
-	position: absolute;
-	left: 2rem;
-	top: 2rem;
-}
-.adr {
-	margin-top: 0;
-}
-.country-name {
-	text-transform: uppercase;
-}
-.url {
-	position: absolute;
-	top: 0;
-	left: 2rem;
-	margin: 0;
-	background: #fff;
-	letter-spacing: 0.75em;
-}
-.url a {
-	padding-right: 0.5rem;
-}
-
-.url b {
-	display: inline-block;
-	width: 1.5rem;
-	background: #000;
-	color: #fff;
-	text-align: center;
-	letter-spacing: normal;
-}
-.url b:nth-child(even){background:#5d6d2b}
-.url b:nth-child(4){margin-right:0.5em}
-/*
-.url b:nth-child(1){background:#d34c6c}
-.url b:nth-child(2){background:orange}
-.url b:nth-child(3){background:#bada55}
-.url b:nth-child(4){background:hotpink}
-*/
-
-.elsewhere {
-	margin-left: -3rem;
-	line-height: 1;
-}
-.elsewhere li {
-	margin-top: 0.125em;
-	padding-top: 0.25em;
-	border-top: 0px dotted #ccc;
-}
-.elsewhere a:before {
-	display: inline-block;
-	width: 3rem;
-}
-
-#social {
-	width: 20em;
-	min-height: 100%;
-	margin-left: auto;
-	padding: 0 1rem;
-	border-bottom: 1px solid transparent;
-}
-#social h3 {
-	margin: 0;
-	font: italic 2em/1 serif;
-}
-nav li {
-	margin: 1em 0;
-}
-nav a {
-	display: block;
-	position: relative;
-	height: 7.5rem;
-	padding: 2.75rem 1rem 1rem 5.5rem;
-	border-top: 0.25rem solid #444;
-	/*border-radius: 0.25rem 0.25rem 0 0;*/
-}
-nav a:before {
-	display: block;
-	position: absolute;
-	top: 1rem;
-	left: 1rem;
-	width: 3rem;
-	height: 3rem;
-	padding: 0.5rem;
-	background: #444;
-	box-shadow: inset 0 0.125em 0.25em rgba(0,0,0,0.67);
-	border-radius: 99em;
-	color: #fff;
-	font-size: 2rem;
-	line-height: 3rem;
-	text-align: center;
-	text-shadow: 0 0.0625em rgba(0,0,0,0.33);
-}
-nav .icon-linkedin{border-top-color:#007bb6}
-nav .icon-xing{border-top-color:#006464}
-nav .icon-google-plus{border-top-color:#d34836}
-nav .icon-facebook{border-top-color:#3b5998}
-nav .icon-twitter{border-top-color:#4099ff}
-nav .icon-code{border-top-color:#d34c6c}
-nav .icon-quotes-left{border-top-color:#bada55}
-
-nav .icon-linkedin:before{background-color:#007bb6}
-nav .icon-xing:before{background-color:#006464}
-nav .icon-google-plus:before{background-color:#d34836}
-nav .icon-facebook:before{background-color:#3b5998}
-nav .icon-twitter:before{background-color:#4099ff}
-nav .icon-code:before{background-color:#d34c6c}
-nav .icon-quotes-left:before{background-color:#bada55}
-
-nav a:after {
-	content: attr(href);
-	display: block;
-	overflow: hidden;
-	position: absolute;
-	left: 1rem;
-	bottom: 0.5rem;
-	right: 1rem;
-	font-size: 0.75rem;
-	line-height: 1.5rem;
-	white-space: nowrap;
-}
-nav b {
-	position: absolute;
-	right: 1rem;
-	top: 0.75rem;
-	font-size: 0.75em;
-	color: #ccc;
-	line-height: 1.5;
-}
-nav small {
-	font-size: 1.25rem;
-}
-
-footer {
-	padding: 0 1rem;
-	text-align: center;
-}
-#social h3,
-footer,
-footer a {
-	color: rgba(186,218,85,1);
-	text-shadow: 0 0 0.67rem rgba(0,0,0,0.75);
-}
-footer a {
-	white-space: nowrap;
-}
-footer a:hover {
-	color: #fff;
-}
-
-@media only screen and (max-width: 447px) {
-
-	.vcard {
-		width: auto;
-		height: 8.5rem;
-		padding: 1rem 0 0 8.5rem;
-		background: #000;
-		color: #fff;
-	}
-
-	.adr a,
-	.elsewhere a {
-		color: #cfc8c0;
-	}
-
-	.photo {
-		top: 0;
-		left: 0;
-		width: 8.5rem;
-	}
-
-	.url {
-		left: auto;
-		right: 0;
-		height: 1rem;
-		font-size: 75%;
-		text-align: right;
-	}
-
-	.elsewhere {
-		display: none;
-	}
-
-}
-
-@media only screen and (max-width: 767px) {
-
-	#vcard {
-		position: relative;
-		top: auto;
-		left: auto;
-		right: auto;
-		bottom: auto;
-		background: #fff;
-		margin-bottom: 1rem;
-		box-shadow: 0 0.125em 0.25em rgba(60,60,60,0.5);
-	}
-
-	.vcard {
-		position: relative;
-		left: auto;
-		top: auto;
-		margin: 0 auto;
-		box-shadow: none;
-	}
-
-	#social {
-		margin-right: auto;
-	}
-
-	#social h3 {
-		font-size: 1.25rem;
-	}
-
-}
-
-@media only screen and (min-width: 768px) {
-
-	html {
-		background: url(fusion.jpg) 77px 37px repeat fixed #333;
-		background-size: 240px auto;
-		background: url(fusion.jpg) 557px 757px repeat-y fixed, url(fusion.jpg) 317px 517px repeat-y fixed, url(fusion.jpg) 77px 37px repeat fixed #333;
-		background-size: 240px auto, 240px auto, 240px auto;
-	}
-
-	footer {
-		position: fixed;
-		left: 0;
-		bottom: 0;
-	}
-
-}
-
-.print{display:none}
-		</style>
-		<style media="print">
-.screen{display:none}
-		</style>
+		<link rel="stylesheet" href="style.css"><!-- http://icomoon.io/ totally rocks! -->
 	</head>
 	<body>
 		<section role="main" id="vcard">
 			<div class="vcard">
-				<div class="photo screen"><img alt="" src="apple-touch-icon.jpg"/></div>
+				<div class="photo"><img alt="" src="apple-touch-icon.jpg"/></div>
 				<h1 class="fn">Matthias Beitl</h1>
-				<h2 class="category">Web developer</h2>
-				<p class="adr"><a target="_blank" href="http://maps.google.at/"><span class="locality">Vienna</span>, <span class="country-name">Austria</span></a></p>
-				<p class="url"><a rel="home" href="http://matthias.beitl.net/"><b>m</b><b>a</b><b>t</b><b>t</b>hias.beitl.net</a></p>
-				<ul class="elsewhere">
-					<li><a class="icon-twitter" href="http://twitter.com/cssence">Follow on Twitter</a></li>
-					<li><a class="icon-linkedin" href="http://at.linkedin.com/in/matthiasbeitl">Visit profile on Linked&#x200A;in</a></li>
-					<li><a class="icon-xing" href="http://www.xing.com/profile/Matthias_Beitl">Visit profile on xing</a></li>
+				<h2 class="category">Web Developer</h2>
+				<p class="adr"><a href="https://maps.google.com/maps?q=vienna+austria"><span class="locality">Vienna</span>, <span class="country-name">Austria</span> <i class="icon-location"></i></a></p>
+				<ul class="elsewhere screen">
+					<li><a rel="me" class="icon-twitter" href="https://twitter.com/cssence">Follow on Twitter</a></li>
+					<li><a rel="me" class="icon-linkedin" href="http://at.linkedin.com/in/matthiasbeitl">Visit profile on Linked&#x200A;in</a></li>
+					<li><a rel="me" class="icon-xing" href="http://www.xing.com/profile/Matthias_Beitl">Visit profile on xing</a></li>
 				</ul>
+				<p class="url screen"><a rel="home" href="http://matthias.beitl.net/"><b>m</b><b>a</b><b>t</b><b>t</b>hias.beitl.net</a></p>
+				<div class="print" id="about">
+					<h3 class="print">About</h3>
+					<p class="note">Matthias “Matt” Beitl is a front-end web craftsman who indulges CSS and its friends. If you are into <a rel="me" href="https://github.com/cssence">coding</a> then you will find him as <a rel="me" href="https://twitter.com/cssence">@cssence</a> on <a rel="me" href="http://cssence.com/">The Internets</a>.</p>
+				</div>
 			</div>
 		</section>
 		<section role="navigation" id="social">
-			<h3>rel=&ldquo;me&rdquo;</h3>
+			<h3 class="print">On the web</h3>
 			<nav>
 				<ul>
-					<li><a class="icon-quotes-left" href="http://matthias.beitl.net/"><b>vCard</b> <small>matthias.beitl.net</small></a></li>
-					<li><a class="icon-code" href="http://cssence.com/"><b>Website</b> <small>cssence.com</small></a></li>
-					<li><a class="icon-github" href="https://github.com/cssence"><b>github</b> <small>/cssence</small></a></li>
-					<li><a class="icon-twitter" href="http://twitter.com/cssence"><b>Twitter</b> <small>@cssence</small></a></li>
-					<li><a class="icon-facebook" href="http://www.facebook.com/matthias.beitl"><b>facebook</b> <small>/matthias.beitl</small></a></li>
-					<li><a class="icon-google-plus" href="http://gplus.to/matthiasbeitl"><b>google&#x200A;plus</b> <small>g+.to/matthiasbeitl</small></a></li>
-					<li><a class="icon-xing" href="http://www.xing.com/profile/Matthias_Beitl"><b>xing</b> <small>/Matthias_Beitl</small></a></li>
-					<li><a class="icon-linkedin" href="http://at.linkedin.com/in/matthiasbeitl"><b>Linked&#x200A;in</b> <small>at&hellip;/matthiasbeitl</small></a></li>
+					<li><a rel="me" class="icon-home" href="http://cssence.com/"><b>Website</b> <i>cssence.com</i></a></li>
+					<li><a rel="me" class="icon-twitter" href="https://twitter.com/cssence"><b>Twitter</b> <i>@cssence</i></a></li>
+					<li><a rel="me" class="icon-github" href="https://github.com/cssence"><b>github</b> <i>/cssence</i></a></li>
+					<li><a rel="me" class="icon-facebook" href="http://www.facebook.com/matthias.beitl"><b>facebook</b> <i>/matthias.beitl</i></a></li>
+					<li><a rel="me" class="icon-google-plus" href="http://gplus.to/matthiasbeitl"><b>google&#x200A;plus</b> <i>g+.to/matthiasbeitl</i></a></li>
+					<li><a rel="me" class="icon-xing" href="http://www.xing.com/profile/Matthias_Beitl"><b>xing</b> <i>/Matthias_Beitl</i></a></li>
+					<li><a rel="me" class="icon-linkedin" href="http://at.linkedin.com/in/matthiasbeitl"><b>Linked&#x200A;in</b> <i>at&hellip;/matthiasbeitl</i></a></li>
+					<li><a rel="home" class="icon-code" href="http://matthias.beitl.net/"><b>vCard</b> <i>matthias.beitl.net</i></a></li>
 				</ul>
 			</nav>
 		</section>
 		<footer role="contentinfo" id="bottom">
 			<hr class="print"/>
-			<p class="legal content"><small>Copyright 2010-2013. All Rights Reserved.</a> <a class="screen" href="http://www.w3.org/html/logo/" title="HTML5 Powered with CSS3: Styling and Semantics">HTML5 Powered with CSS3.</a></p>
+			<p class="legal"><small><a href="http://www.gnu.org/licenses/gpl-2.0.html#SEC1" title="Licensed under the GNU General Public License (GPL) v2">Copyleft 2010-2013 Matthias Beitl.</a> <a class="screen" href="http://www.w3.org/html/logo/" title="HTML5 powered with CSS3: Styling and Semantics">HTML5 powered with CSS3.</a></small></p>
 		</footer>
 	</body>
 </html>
