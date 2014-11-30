@@ -7,8 +7,7 @@ html(lang="en")
 		title Matthias Beitl
 		meta(name="description" content="Virtual home sweet home of web developer Matthias Beitl. His brain waves broadcast from Vienna, Austria.")
 		block icons
-			if verbose
-				link(rel="icon", sizes="16x16", href="/favicon.ico")
+			link(rel="icon", sizes="16x16", href="/favicon.ico")
 			link(rel="icon", type="image/jpeg", sizes="300x300", href="/photo.jpg")
 			link(rel="apple-touch-icon", href="/photo.jpg")
 		block stylesheets
@@ -16,7 +15,7 @@ html(lang="en")
 				link(rel="stylesheet", href="/style.css")
 			else
 				style
-					include ../public/main.min.css
+					include ../public/style.min.css
 
 	body
 		main(role="main")
@@ -36,15 +35,8 @@ html(lang="en")
 							span.locality Vienna
 							| , 
 							span.country-name Austria
-					ul.elsewhere.screen
-						li
-							a(rel="me", href="https://twitter.com/cssence") Follow on Twitter
-						li
-							a(rel="me", href="http://at.linkedin.com/in/matthiasbeitl") Visit profile on Linked&#x200A;in
-						li
-							a(rel="me", href="http://www.xing.com/profile/Matthias_Beitl") Visit profile on xing
 				#about.print
-					h3.print About
+					h3 About
 					p.note
 						| Matthias Beitl is a front-end web craftsman who indulges CSS and its friends. If you are into 
 						a(rel="me", href="https://github.com/cssence") coding
@@ -70,7 +62,7 @@ html(lang="en")
 						| github 
 						b /cssence
 				li
-					a.facebook(rel="me", href="http://www.facebook.com/matthias.beitl")
+					a.facebook(rel="me", href="https://www.facebook.com/matthias.beitl")
 						| facebook 
 						b /matthias.beitl
 				li
@@ -78,11 +70,11 @@ html(lang="en")
 						| google+ 
 						b g+.to/matthiasbeitl
 				li
-					a.xing(rel="me", href="http://www.xing.com/profile/Matthias_Beitl")
+					a.xing(rel="me", href="https://www.xing.com/profile/Matthias_Beitl")
 						| xing 
 						b /Matthias_Beitl
 				li
-					a.linkedin(rel="me", href="http://at.linkedin.com/in/matthiasbeitl")
+					a.linkedin(rel="me", href="https://at.linkedin.com/in/matthiasbeitl")
 						| Linked&#x200A;in 
 						b at&hellip;/matthiasbeitl
 				li
