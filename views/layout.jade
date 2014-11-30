@@ -3,20 +3,22 @@ html(lang="en")
 
 	head
 		meta(charset="utf-8")
-		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width,initial-scale=1.0")
 		title Matthias Beitl
 		meta(name="description" content="Virtual home sweet home of web developer Matthias Beitl. His brain waves broadcast from Vienna, Austria.")
-		meta(name="mobile-web-app-capable", content="yes")
 		block icons
-			link(rel="icon", type="image/png", sizes="16x16", href="favicon.ico")
-			link(rel="icon", type="image/png", sizes="256x256", href="photo.jpg")
-			link(rel="apple-touch-icon", href="photo.jpg")
+			if verbose
+				link(rel="icon", sizes="16x16", href="/favicon.ico")
+			link(rel="icon", type="image/jpeg", sizes="300x300", href="/photo.jpg")
+			link(rel="apple-touch-icon", href="/photo.jpg")
 		block stylesheets
-			link(rel="stylesheet", href="/style.css")
+			if verbose
+				link(rel="stylesheet", href="/style.css")
+			else
+				style
+					include ../public/main.min.css
 
 	body
-		include ../public/icons.svg
 		main(role="main")
 			.vcard
 				#profile
@@ -34,24 +36,13 @@ html(lang="en")
 							span.locality Vienna
 							| , 
 							span.country-name Austria
-							svg.icon-location
-								use(xlink:href="#icon-location")
 					ul.elsewhere.screen
 						li
-							a(rel="me", href="https://twitter.com/cssence")
-								svg
-									use(xlink:href="#icon-twitter")
-								| Follow on Twitter
+							a(rel="me", href="https://twitter.com/cssence") Follow on Twitter
 						li
-							a(rel="me", href="http://at.linkedin.com/in/matthiasbeitl")
-								svg
-									use(xlink:href="#icon-linkedin")
-								| Visit profile on Linked&#x200A;in
+							a(rel="me", href="http://at.linkedin.com/in/matthiasbeitl") Visit profile on Linked&#x200A;in
 						li
-							a(rel="me", href="http://www.xing.com/profile/Matthias_Beitl")
-								svg
-									use(xlink:href="#icon-xing")
-								| Visit profile on xing
+							a(rel="me", href="http://www.xing.com/profile/Matthias_Beitl") Visit profile on xing
 				#about.print
 					h3.print About
 					p.note
@@ -62,57 +53,42 @@ html(lang="en")
 						|  on 
 						a(rel="me", href="http://cssence.com/") The Internets
 						| .
+		block errors
 		nav(role="navigation")
 			h3.print On the web
 			ul
 				li
 					a.blog(rel="me", href="http://cssence.com/")
-						svg
-							use(xlink:href="#icon-home")
 						| Website 
 						b cssence.com
 				li
 					a.twitter(rel="me", href="https://twitter.com/cssence")
-						svg
-							use(xlink:href="#icon-twitter")
-						| Twitter
+						| Twitter 
 						b @cssence
 				li
 					a.github(rel="me", href="https://github.com/cssence")
-						svg
-							use(xlink:href="#icon-github")
 						| github 
 						b /cssence
 				li
 					a.facebook(rel="me", href="http://www.facebook.com/matthias.beitl")
-						svg
-							use(xlink:href="#icon-facebook")
 						| facebook 
 						b /matthias.beitl
 				li
-					a.google-plus(rel="me", href="http://gplus.to/matthiasbeitl")
-						svg
-							use(xlink:href="#icon-googleplus")
+					a.googleplus(rel="me", href="http://gplus.to/matthiasbeitl")
 						| google+ 
 						b g+.to/matthiasbeitl
 				li
 					a.xing(rel="me", href="http://www.xing.com/profile/Matthias_Beitl")
-						svg
-							use(xlink:href="#icon-xing")
 						| xing 
 						b /Matthias_Beitl
 				li
 					a.linkedin(rel="me", href="http://at.linkedin.com/in/matthiasbeitl")
-						svg
-							use(xlink:href="#icon-linkedin")
 						| Linked&#x200A;in 
 						b at&hellip;/matthiasbeitl
 				li
 					a(rel="home", href="http://matthias.beitl.net/")
-						svg
-							use(xlink:href="#icon-profile")
 						| vCard 
 						b matthias.beitl.net
 		footer(role="contentinfo")
 			p.legal
-				a(href="http://www.gnu.org/licenses/gpl-2.0.html#SEC1", title="Licensed under the GNU General Public License (GPL) v2") Copyleft 2010-2014 Matthias Beitl
+				a(rel="license", href="https://github.com/cssence/matthias.beitl.net/blob/gh-pages/LICENSE", title="Licensed under the GNU General Public License (GPLv3)") Copyleft 2010-2014 Matthias Beitl
