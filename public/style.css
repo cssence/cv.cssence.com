@@ -184,7 +184,9 @@ ul {
 		height: 3rem;
 		background: center center no-repeat;
 		background-size: contain;
+		-webkit-transform: rotate(9deg);
 		transform: rotate(9deg);
+		-webkit-transition: -webkit-transform .6s ease-in-out, opacity .6s ease-in-out;
 		transition: transform .6s ease-in-out, opacity .6s ease-in-out;
 	}
 	b:after {
@@ -199,6 +201,7 @@ ul {
 	nav a:hover b:before,
 	nav a:focus b:after,
 	nav a:hover b:after {
+		-webkit-transform: rotate(0deg);
 		transform: rotate(0deg);
 	}
 	nav a:after {
@@ -308,11 +311,15 @@ ul {
 		left: -8.5rem;
 	}
 	img {
-		border: 0.5rem solid #fff;
-		border-radius: 50%;
-		transition: border-radius .8s linear;
+		border: 0.25rem solid #fff;
+		-webkit-transition: border-radius .8s linear, -webkit-transform .8s linear;
+		transition: border-radius .8s linear, transform .8s linear;
+		-webkit-transform: scale(1);
+		transform: scale(1);
 	}
 	img:hover {
-		border-radius: 0;
+		border-radius: 50%;
+		-webkit-transform: scale(1.5);
+		transform: scale(1.5);
 	}
 }
