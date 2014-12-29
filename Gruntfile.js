@@ -31,8 +31,7 @@ module.exports = function (grunt) {
 					{expand: true, flatten: true, src: ['static/fusion.jpg'], dest: '<%= pkg.paths.dist %>/'},
 					{expand: true, flatten: true, src: ['static/crossdomain.xml'], dest: '<%= pkg.paths.dist %>/'},
 					{expand: true, flatten: true, src: ['static/browserconfig.xml'], dest: '<%= pkg.paths.dist %>/'},
-					{expand: true, flatten: true, src: ['static/robots.txt'], dest: '<%= pkg.paths.dist %>/'},
-					{src: ['LICENSE'], dest: '<%= pkg.paths.dist %>/'}
+					{expand: true, flatten: true, src: ['static/robots.txt'], dest: '<%= pkg.paths.dist %>/'}
 				]
 			}
 		},
