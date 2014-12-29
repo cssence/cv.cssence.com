@@ -16,40 +16,63 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					'public/index.html': ['views/index.jade'],
-					'public/404.html': ['views/404.jade']
+					'<%= pkg.paths.dist %>/index.html': ['views/index.jade'],
+					'<%= pkg.paths.dist %>/404.html': ['views/404.jade']
 				}
 			}
 		},
 
+		// copy assets that are to-be-hosted
+		copy: {
+			assets: {
+				files: [
+					{expand: true, flatten: true, src: ['static/favicon.ico'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/photo.jpg'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/fusion.jpg'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/crossdomain.xml'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/browserconfig.xml'], dest: '<%= pkg.paths.dist %>/'},
+					{expand: true, flatten: true, src: ['static/robots.txt'], dest: '<%= pkg.paths.dist %>/'},
+					{src: ['LICENSE'], dest: '<%= pkg.paths.dist %>/'}
+				]
+			}
+		},
+
+		// clean staging directory
+		clean: {
+			build: ['<%= pkg.paths.stage %>']
+		},
+
+		// minify css
 		cssmin: {
 			minify: {
 				expand: true,
-				cwd: 'public/',
+				cwd: 'static/',
 				src: ['style.css'],
-				dest: 'public/',
+				dest: '<%= pkg.paths.stage %>/',
 				ext: '.min.css'
 			}
 		}
+
 	});
 
 	// Load the plugins
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	grunt.registerTask(
 		'build',
-		'Builds the project',
-		['cssmin:minify', 'jade:compile']
+		'Prepares project deployment (minification)',
+		['clean:build', 'cssmin:minify']
 	);
 	grunt.registerTask(
-		'minify',
-		'Creates minified files (no HTML)',
-		['cssmin:minify']
+		'release',
+		'Deploys the project (copy assets and generate HTML)',
+		['clean:build', 'cssmin:minify', 'jade:compile', 'copy:assets']
 	);
 
 	// Default task(s).
-	grunt.registerTask('default', ['build']);
+	grunt.registerTask('default', ['release']);
 
 };
