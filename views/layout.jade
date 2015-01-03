@@ -18,33 +18,32 @@ html(lang="en")
 					include ../build/style.min.css
 
 	body
-		main(role="main")
-			.vcard
-				#profile
-					.url
-						a(rel="home", href="http://matthias.beitl.net/")
-							i http://
-							| matthias.beitl.net
-							i /
-					.photo
-						img(alt="", src="photo.jpg")
-					h1.fn Matthias Beitl
-					h2.category Web Developer
-					p.adr
-						a(href="https://maps.google.com/maps?q=vienna+austria")
-							span.locality Vienna
-							| , 
-							span.country-name Austria
-				#about.print
-					h3 About
-					p.note
-						| Matthias Beitl is a front-end web craftsman who indulges CSS and its friends. If you are into 
-						a(rel="me", href="https://github.com/cssence") coding
-						|  you will find him as 
-						a(rel="me", href="https://twitter.com/cssence") @cssence
-						|  on 
-						a(rel="me", href="http://cssence.com/") The Internets
-						| .
+		main.vcard(role="main")
+			#profile
+				.url
+					a(rel="home", href="http://matthias.beitl.net/")
+						i http://
+						| matthias.beitl.net
+						i /
+				.photo
+					img(alt="", src="photo.jpg")
+				h1.fn Matthias Beitl
+				h2.category Web Developer
+				.adr
+					a(href="https://maps.google.com/maps?q=vienna+austria")
+						span.locality Vienna
+						| , 
+						span.country-name Austria
+			#about
+				h3.print About
+				p.note
+					| Matthias Beitl is a front-end web craftsman who indulges Cascading Style Sheets and their friends. If you are into 
+					a(rel="me", href="https://github.com/cssence") coding
+					|  you will find him as 
+					a(rel="me", href="https://twitter.com/cssence") @cssence
+					|  on 
+					a(rel="me", href="http://cssence.com/") The&nbsp;Internets
+					| .
 		block errors
 		nav(role="navigation")
 			h3.print On the web
