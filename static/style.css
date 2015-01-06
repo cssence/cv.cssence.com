@@ -1,13 +1,3 @@
-html {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-*,
-:after,
-:before {
-	-moz-box-sizing: inherit;
-	box-sizing: inherit;
-}
 main {
 	display: block; /*IE<11*/
 }
@@ -107,8 +97,8 @@ ul {
 		overflow-x: hidden;
 	}
 	#profile {
-		width: 28rem;
-		height: 8.5rem;
+		width: 11rem;
+		height: 6.5rem;
 		margin: 0 auto;
 		padding: 2rem 8.5rem 0;
 	}
@@ -150,7 +140,7 @@ ul {
 	#about {
 		position: absolute;
 		width: 100%;
-		height: 12rem;
+		height: 6rem;
 		bottom: 4rem;
 		padding: 3rem 1rem;
 		background: url(data:image/gif;base64,R0lGODlhBgAGAIAAAP///+311CwAAAAABgAGAAACCEyAaKnH+6AqADs=) #fff;
