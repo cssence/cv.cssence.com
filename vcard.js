@@ -1,53 +1,42 @@
-/**
- * Starting point for vCard app
- * http-server
- */
-'use strict';
+/*jslint nomen: true */
+/*global require: false, __dirname: false, console: false, process: false */
+(function () {
+	"use strict";
 
-// Module dependencies (environment)
-var nconf = require('nconf'),
-	express = require('express'),
-	http = require('http'),
-	path = require('path'),
-	errorhandler = require('errorhandler'),
-	compression = require('compression'),
-	serveStatic = require('serve-static'),
-	serveFavicon = require('serve-favicon');
+	var	nconf, path, dir, isDev, app, mainController;
+	path = require("path");
 
-// Read configuration (environment)
-nconf.argv().env().file({ file: 'settings.json' }).defaults({
-	'env': 'development',
-	'port': 8080
-});
-if (!/[0-9]+/.test(nconf.get('port'))) {
-	console.error('Illegal value port! Check your configuration and your settings.json file.');
-	process.exit(1);
-}
+	// Read configuration (environment)
+	nconf = require("nconf");
+	nconf.argv().env().file({file: path.join(__dirname, "/settings.json")}).defaults({
+		"env": "development",
+		"port": 8080
+	});
+	if (!/[0-9]+/.test(nconf.get("port"))) {
+		console.error("Illegal value port! Check your configuration and your settings.json file.");
+		process.exit(1);
+	}
 
-// Initialization
-var isDev = 'development' === nconf.get('env').toLowerCase();
-var app = express();
-app.locals.basedir = path.join(__dirname, '/views');
-app.use(serveFavicon(__dirname + '/static/favicon.ico'));
-if (isDev) {
-	app.use(serveStatic(path.join(__dirname, '/static')));
-	app.use(errorhandler({ dumpExceptions: true, showStack: true }));
-} else {
-	app.use(compression());
-	app.use(serveStatic(path.join(__dirname, '/static'), { maxAge: 86400 }));
-	app.use(errorhandler());
-}
-app.set('port', nconf.get('port'));
-app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'jade');
+	// Initialization
+	isDev = "development" === nconf.get("env").toLowerCase();
+	dir = {};
+	app = require("express")();
+	dir.views = path.join(__dirname, "/views");
+	dir.plain = path.join(__dirname, "/static");
+	app.locals.basedir = dir.views;
+	app.use(require("serve-static")(dir.plain));
+	app.set("port", nconf.get("port"));
+	app.set("views", dir.views);
+	app.set("view engine", "jade");
 
-// Routes
-var IndexController = require('./routes/index');
-app.get('/', IndexController.indexAction(isDev));
-app.get('/error', IndexController.indexAction(isDev, '404'));
-app.use(IndexController.pageNotFoundAction);
+	// Routes
+	mainController = require("./routes/main");
+	app.get("/", mainController.indexAction(isDev, nconf.get("title")));
+	app.use(mainController.indexAction(isDev, nconf.get("title"), 404));
 
-// Http server
-http.createServer(app).listen(nconf.get('port'), function () {
-	console.info('Express %s server listening on port %d', nconf.get('env'), nconf.get('port'));
-});
+	// Http server
+	require("http").createServer(app).listen(nconf.get("port"), function () {
+		console.info("Express %s server listening on port %d", nconf.get("env"), nconf.get("port"));
+	});
+
+}());

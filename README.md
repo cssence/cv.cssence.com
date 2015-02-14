@@ -1,5 +1,4 @@
-matthias.beitl.net
-==================
+# matthias.beitl.net
 
 http://matthias.beitl.net/ - vCard of Matthias Beitl
 

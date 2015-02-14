@@ -50,31 +50,38 @@ html(lang="en")
 			ul
 				li
 					a.blog(rel="me", href="http://cssence.com/")
-						| Website 
+						include ../static/icon-home.svg
+						|  Website 
 						b cssence.com
 				li
 					a.twitter(rel="me", href="https://twitter.com/cssence")
-						| Twitter 
+						include ../static/icon-twitter.svg
+						|  Twitter 
 						b @cssence
 				li
 					a.github(rel="me", href="https://github.com/cssence")
-						| github 
+						include ../static/icon-github.svg
+						|  github 
 						b /cssence
 				li
-					a.googleplus(rel="me", href="http://gplus.to/matthiasbeitl")
-						| google+ 
-						b g+.to/matthiasbeitl
+					a.googleplus(rel="me", href="https://plus.google.com/+MatthiasBeitl-cssence")
+						include ../static/icon-googleplus.svg
+						|  google+ 
+						b +MatthiasBeitl<small>-cssence</small>
 				li
 					a.xing(rel="me", href="https://www.xing.com/profile/Matthias_Beitl")
-						| xing 
+						include ../static/icon-xing.svg
+						|  xing 
 						b /Matthias_Beitl
 				li
 					a.linkedin(rel="me", href="https://at.linkedin.com/in/matthiasbeitl")
-						| Linked&#x200A;in 
-						b at&hellip;/matthiasbeitl
+						include ../static/icon-linkedin.svg
+						|  Linked&#x200A;in 
+						b <small>at&hellip;</small>/matthiasbeitl
 				li
 					a(rel="home", href="http://matthias.beitl.net/")
-						| vCard 
+						include ../static/icon-profile.svg
+						|  vCard 
 						b matthias.beitl.net
 		footer(role="contentinfo")
 			p.legal
