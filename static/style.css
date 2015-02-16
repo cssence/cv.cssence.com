@@ -52,9 +52,12 @@ ul {
 	}
 	svg {
 		display: inline-block;
-		width: 0.75em;
-		height: 0.75em;
-		margin: 0.25em 0.5em 0 0;
+		width: 1em;
+		height: 1em;
+		margin: 0.125em 0.5em 0 0;
+	}
+	path {
+		fill: #000;
 	}
 	nav a:before {
 		content: attr(href);
@@ -203,10 +206,10 @@ ul {
 	svg {
 		display: block;
 		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		width: 3rem;
-		height: 3rem;
+		top: 0.5rem;
+		right: 0.5rem;
+		width: 4rem;
+		height: 4rem;
 		-webkit-transform: rotate(9deg);
 		transform: rotate(9deg);
 		-webkit-transition: -webkit-transform .6s ease-in-out, opacity .6s ease-in-out;
@@ -215,13 +218,15 @@ ul {
 	nav a::before {
 		content: '';
 		z-index: 1;
-		background: url(data:image/gif;base64,R0lGODlhMAAwAIAAAP///////yH5BAEKAAEALAAAAAAwADAAAAL+jAMJaHvfkGLNvQSh2gtH6UxXRkrHdlqg13lmCX/WzGF1q2r5J4ccc+vENJRMyORL7U4wn7DCdP6WQ57SFkxWjSLSD8oqMrfdsRcVoZaOXLVSbN7KoSs3PDWPPZtEV769Fuj3N/KHRUj0Ild2VzXYd0ZI85gYaXfBODRztvO1ZyW4lIlJV4o4h1VzWhg1CXdppAmr6BXVxCa7yqkbuGjDO8sVR9qLmrOpg9o4TAuExhsLKgVSy1pN3MPSEvtpJqoSVISLl0sxnUwNalzxpaOlXp7upmrNDM0eLJ6/FtaLsi/tCaxtlPI809WJTJ1TnY7pKdjsDTZjDVPhOAbxFhoZRi78ZHyYBZyTK7Y04QuXDR8SXyrpTKhRAAA7) center center repeat;
+		background: url(data:image/gif;base64,R0lGODlhMAAwAIAAAP///////yH5BAEKAAEALAAAAAAwADAAAAL+jAMJaHvfkGLNvQSh2gtH6UxXRkrHdlqg13lmCX/WzGF1q2r5J4ccc+vENJRMyORL7U4wn7DCdP6WQ57SFkxWjSLSD8oqMrfdsRcVoZaOXLVSbN7KoSs3PDWPPZtEV769Fuj3N/KHRUj0Ild2VzXYd0ZI85gYaXfBODRztvO1ZyW4lIlJV4o4h1VzWhg1CXdppAmr6BXVxCa7yqkbuGjDO8sVR9qLmrOpg9o4TAuExhsLKgVSy1pN3MPSEvtpJqoSVISLl0sxnUwNalzxpaOlXp7upmrNDM0eLJ6/FtaLsi/tCaxtlPI809WJTJ1TnY7pKdjsDTZjDVPhOAbxFhoZRi78ZHyYBZyTK7Y04QuXDR8SXyrpTKhRAAA7) 0.5rem 0.5rem repeat;
 		opacity: 1;
 	}
 	nav a:focus::before,
 	nav a:hover::before {
 		opacity: 0;
 	}
+	nav a:focus::before,
+	nav a:hover::before,
 	nav a:focus svg,
 	nav a:hover svg {
 		-webkit-transform: rotate(0deg);
@@ -232,54 +237,34 @@ ul {
 	}
 	b {
 		display: block;
+		position: relative;
 		font-size: 1.25rem;
 		font-weight: normal;
 		line-height: 2;
 	}
-	path {
-		fill: #bada55;
-	}
-	.blog {
-		border-top-color: #d34c6c;
-		color: #d34c6c;
-	}
-	.blog path {
-		fill: #d34c6c;
+	.cssence {
+		border-top-color: #d34b6c;
+		color: #d34b6c;
 	}
 	.twitter {
 		border-top-color: #4099ff;
 		color: #4099ff;
 	}
-	.twitter path {
-		fill: #4099ff;
-	}
 	.github {
 		border-top-color: #444;
 		color: #444;
 	}
-	.github path {
-		fill: #444;
-	}
-	.googleplus {
+	.google {
 		border-top-color: #d34836;
 		color: #d34836;
-	}
-	.googleplus path {
-		fill: #d34836;
 	}
 	.xing {
 		border-top-color: #006464;
 		color: #006464;
 	}
-	.xing path {
-		fill: #006464;
-	}
 	.linkedin {
 		border-top-color: #007bb6;
 		color: #007bb6;
-	}
-	.linkedin path {
-		fill: #007bb6;
 	}
 	.legal {
 		padding: 1rem 0;

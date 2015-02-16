@@ -4,20 +4,20 @@ module.exports = function (grunt) {
 	"use strict";
 
 	// Project configuration.
+	grunt.file.defaultEncoding = "utf8";
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
-		config: grunt.file.readJSON("settings.json"),
 
 		// clean staging directory
 		clean: {
-			build: ["<%= config.paths.stage %>"]
+			build: ["build"]
 		},
 
 		// minify css
 		cssmin: {
 			css: {
 				files: {
-					'<%= config.paths.stage %>/style.min.css': ['static/style.css']
+					'build/style.min.css': ['static/style.css']
 				}
 			}
 		},
@@ -27,12 +27,22 @@ module.exports = function (grunt) {
 			compile: {
 				options: {
 					data: {
-						debug: false
+						debug: false,
+						data: (function () {
+							var data, homeUrl = "http://matthias.beitl.net/";
+							data = grunt.file.readJSON("public/bookmarks.json");
+							data.forEach(function (bookmark) {
+								bookmark.id = bookmark.url.split("/")[2].split(".").splice(-2)[0];
+								bookmark.rel = bookmark.url === homeUrl ? "home" : "me";
+								bookmark.iconSrc = grunt.file.read("public/" + bookmark.icon.split(homeUrl)[1]);
+							});
+							return data;
+						}())
 					}
 				},
 				files: {
-					"<%= config.paths.dist %>/index.html": ["views/index.jade"],
-					"<%= config.paths.dist %>/404.html": ["views/404.jade"]
+					"public/index.html": ["views/index.jade"],
+					"public/404.html": ["views/404.jade"]
 				}
 			}
 		},
@@ -41,13 +51,13 @@ module.exports = function (grunt) {
 		copy: {
 			assets: {
 				files: [
-					{expand: true, flatten: true, src: ["static/favicon.ico"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/photo.jpg"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/fusion.jpg"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/crossdomain.xml"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/browserconfig.xml"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/robots.txt"], dest: "<%= config.paths.dist %>/"},
-					{src: ["LICENSE"], dest: "<%= config.paths.dist %>/"}
+					{expand: true, flatten: true, src: [
+						"static/browserconfig.xml",
+						"static/favicon.ico",
+						"static/fusion.jpg",
+						"static/photo.jpg",
+						"LICENSE"
+					], dest: "public/"}
 				]
 			}
 		}

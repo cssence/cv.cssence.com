@@ -48,41 +48,10 @@ html(lang="en")
 		nav(role="navigation")
 			h3.print On the web
 			ul
-				li
-					a.blog(rel="me", href="http://cssence.com/")
-						include ../static/icon-home.svg
-						|  Website 
-						b cssence.com
-				li
-					a.twitter(rel="me", href="https://twitter.com/cssence")
-						include ../static/icon-twitter.svg
-						|  Twitter 
-						b @cssence
-				li
-					a.github(rel="me", href="https://github.com/cssence")
-						include ../static/icon-github.svg
-						|  github 
-						b /cssence
-				li
-					a.googleplus(rel="me", href="https://google.com/+MatthiasBeitl-cssence")
-						include ../static/icon-googleplus.svg
-						|  google+ 
-						b +MatthiasBeitl<small>-cssence</small>
-				li
-					a.xing(rel="me", href="https://www.xing.com/profile/Matthias_Beitl")
-						include ../static/icon-xing.svg
-						|  xing 
-						b /Matthias_Beitl
-				li
-					a.linkedin(rel="me", href="https://at.linkedin.com/in/matthiasbeitl")
-						include ../static/icon-linkedin.svg
-						|  Linked&#x200A;in 
-						b <small>at&hellip;</small>/matthiasbeitl
-				li
-					a(rel="home", href="http://matthias.beitl.net/")
-						include ../static/icon-profile.svg
-						|  vCard 
-						b matthias.beitl.net
+				each bookmark in data
+					li
+						a(rel=bookmark.rel, href=bookmark.url, class=bookmark.id)!= bookmark.iconSrc + " " + bookmark.title + " "
+							b= bookmark.name
 		footer(role="contentinfo")
 			p.legal
 				a(rel="license", href="https://github.com/cssence/matthias.beitl.net/blob/gh-pages/LICENSE", title="Licensed under the GNU General Public License (GPLv3)") Copyleft 2010-2015 Matthias Beitl
