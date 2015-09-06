@@ -11,11 +11,15 @@ html(lang="en")
       link(rel="icon", type="image/jpeg", sizes="300x300", href="/photo.jpg")
       link(rel="apple-touch-icon", href="/photo.jpg")
     block stylesheets
-      if verbose
-        link(rel="stylesheet", href="/style.css")
-      else
+      if compile
         style
           include ../build/style.min.css
+      else
+        link(rel="stylesheet", href="/style.css")
+      style(media="screen")
+        each bookmark in bookmarks
+          if bookmark.color
+            = "." + bookmark.id + "{border-color:" + bookmark.color + ";color:" + bookmark.color + "}." + bookmark.id + " path{fill:" + bookmark.color + "}"
 
   body
     main.vcard(role="main")

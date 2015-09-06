@@ -17,7 +17,7 @@ var fs = require("fs");
 var data = {};
 data.bookmarks = JSON.parse(fs.readFileSync(path.join(pkg.config.paths.public, "bookmarks.json"), "utf8"));
 data.bookmarks.forEach(function (bookmark) {
-  bookmark.id = bookmark.url.split("/")[2].split(".").splice(-2)[0];
+  bookmark.id = bookmark.title.toLowerCase();
   bookmark.rel = bookmark.url === pkg.homepage ? "home" : "me";
   bookmark.iconSrc = fs.readFileSync(path.join(pkg.config.paths.public, bookmark.icon.split(pkg.homepage)[1]), "utf8");
 });
@@ -26,7 +26,7 @@ data.bookmarks.forEach(function (bookmark) {
 var app = require("express")();
 app.set("port", pkg.config.paths.port);
 app.locals.basedir = pkg.config.paths.views;
-app.use(require("serve-static")(pkg.config.paths.static));
+app.use(require("serve-static")(pkg.config.paths.static, {index: false}));
 app.use(require("serve-static")(pkg.config.paths.public, {index: false}));
 app.set("views", pkg.config.paths.views);
 app.set("view engine", "jade");

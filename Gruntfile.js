@@ -5,7 +5,6 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.file.defaultEncoding = "utf8";
   grunt.initConfig({
-    pkg: grunt.file.readJSON("package.json"),
 
     // clean staging directory
     clean: {
@@ -26,12 +25,13 @@ module.exports = function (grunt) {
       compile: {
         options: {
           data: {
-            debug: false,
+            compile: true,
             bookmarks: (function () {
-              var bookmarks, homeUrl = "http://matthias.beitl.net/";
+              var bookmarks, homeUrl;
+              homeUrl = grunt.file.readJSON("package.json").homepage;
               bookmarks = grunt.file.readJSON("public/bookmarks.json");
               bookmarks.forEach(function (bookmark) {
-                bookmark.id = bookmark.url.split("/")[2].split(".").splice(-2)[0];
+                bookmark.id = bookmark.title.toLowerCase();
                 bookmark.rel = bookmark.url === homeUrl ? "home" : "me";
                 bookmark.iconSrc = grunt.file.read("public/" + bookmark.icon.split(homeUrl)[1]);
               });

@@ -202,6 +202,9 @@ ul {
     border-top: 0.25rem solid #bada55;
     color: #bada55;
   }
+	nav a path {
+		fill: #bada55;
+	}
   nav a::before,
   svg {
     display: block;
@@ -241,30 +244,6 @@ ul {
     font-size: 1.25rem;
     font-weight: normal;
     line-height: 2;
-  }
-  .cssence {
-    border-top-color: #d34b6c;
-    color: #d34b6c;
-  }
-  .twitter {
-    border-top-color: #4099ff;
-    color: #4099ff;
-  }
-  .github {
-    border-top-color: #444;
-    color: #444;
-  }
-  .google {
-    border-top-color: #d34836;
-    color: #d34836;
-  }
-  .xing {
-    border-top-color: #006464;
-    color: #006464;
-  }
-  .linkedin {
-    border-top-color: #007bb6;
-    color: #007bb6;
   }
   .legal {
     padding: 1rem 0;
