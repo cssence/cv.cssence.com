@@ -1,77 +1,82 @@
-/*global grunt, module: false */
-
+/*jslint node: true */
+"use strict";
 module.exports = function (grunt) {
-	"use strict";
 
-	// Project configuration.
-	grunt.initConfig({
-		pkg: grunt.file.readJSON("package.json"),
-		config: grunt.file.readJSON("settings.json"),
+  // Project configuration.
+  grunt.file.defaultEncoding = "utf8";
+  grunt.initConfig({
 
-		// clean staging directory
-		clean: {
-			build: ["<%= config.paths.stage %>"]
-		},
+    // clean staging directory
+    clean: {
+      build: ["build"]
+    },
 
-		// minify css
-		cssmin: {
-			css: {
-				files: {
-					'<%= config.paths.stage %>/style.min.css': ['static/style.css']
-				}
-			}
-		},
+    // minify css
+    cssmin: {
+      css: {
+        files: {
+          "build/style.min.css": ["static/style.css"]
+        }
+      }
+    },
 
-		// jade compile
-		jade: {
-			compile: {
-				options: {
-					data: {
-						debug: false
-					}
-				},
-				files: {
-					"<%= config.paths.dist %>/index.html": ["views/index.jade"],
-					"<%= config.paths.dist %>/404.html": ["views/404.jade"]
-				}
-			}
-		},
+    // jade compile
+    jade: {
+      compile: {
+        options: {
+          data: {
+            compile: true,
+            bookmarks: (function () {
+              var bookmarks, homeUrl;
+              homeUrl = grunt.file.readJSON("package.json").homepage;
+              bookmarks = grunt.file.readJSON("public/bookmarks.json");
+              bookmarks.forEach(function (bookmark) {
+                bookmark.id = bookmark.title.toLowerCase();
+                bookmark.rel = bookmark.url === homeUrl ? "home" : "me";
+                bookmark.iconSrc = grunt.file.read("public/" + bookmark.icon.split(homeUrl)[1]);
+              });
+              return bookmarks;
+            }())
+          }
+        },
+        files: {
+          "public/index.html": ["views/index.jade"],
+          "public/404.html": ["views/404.jade"]
+        }
+      }
+    },
 
-		// copy assets that are to-be-hosted
-		copy: {
-			assets: {
-				files: [
-					{expand: true, flatten: true, src: ["static/favicon.ico"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/photo.jpg"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/fusion.jpg"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/crossdomain.xml"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/browserconfig.xml"], dest: "<%= config.paths.dist %>/"},
-					{expand: true, flatten: true, src: ["static/robots.txt"], dest: "<%= config.paths.dist %>/"},
-					{src: ["LICENSE"], dest: "<%= config.paths.dist %>/"}
-				]
-			}
-		}
+    // copy assets that are to-be-hosted
+    copy: {
+      assets: {
+        files: [
+          {expand: true, flatten: true, src: [
+            "LICENSE"
+          ], dest: "public/"}
+        ]
+      }
+    }
 
-	});
+  });
 
-	// Load the plugins
-	grunt.loadNpmTasks("grunt-contrib-clean");
-	grunt.loadNpmTasks("grunt-contrib-cssmin");
-	grunt.loadNpmTasks("grunt-contrib-jade");
-	grunt.loadNpmTasks("grunt-contrib-copy");
+  // Load the plugins
+  grunt.loadNpmTasks("grunt-contrib-clean");
+  grunt.loadNpmTasks("grunt-contrib-cssmin");
+  grunt.loadNpmTasks("grunt-contrib-jade");
+  grunt.loadNpmTasks("grunt-contrib-copy");
 
-	grunt.registerTask(
-		"build",
-		"Prepares project deployment (minification)",
-		["clean:build", "cssmin:css"]
-	);
-	grunt.registerTask(
-		"release",
-		"Deploys the project (copy assets and generate HTML)",
-		["clean:build", "cssmin:css", "jade:compile", "copy:assets"]
-	);
+  grunt.registerTask(
+    "build",
+    "Prepares project deployment (minification)",
+    ["clean:build", "cssmin:css"]
+  );
+  grunt.registerTask(
+    "release",
+    "Deploys the project (copy assets and generate HTML)",
+    ["clean:build", "cssmin:css", "jade:compile", "copy:assets"]
+  );
 
-	// Default task(s).
-	grunt.registerTask("default", ["release"]);
+  // Default task(s).
+  grunt.registerTask("default", ["release"]);
 
 };
