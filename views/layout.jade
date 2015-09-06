@@ -1,57 +1,57 @@
 doctype html
 html(lang="en")
 
-	head
-		meta(charset="utf-8")
-		meta(name="viewport", content="width=device-width,initial-scale=1.0")
-		title Matthias Beitl
-		meta(name="description" content="Virtual home sweet home of web developer Matthias Beitl. His brain waves broadcast from Vienna, Austria.")
-		block icons
-			link(rel="icon", sizes="16x16", href="/favicon.ico")
-			link(rel="icon", type="image/jpeg", sizes="300x300", href="/photo.jpg")
-			link(rel="apple-touch-icon", href="/photo.jpg")
-		block stylesheets
-			if verbose
-				link(rel="stylesheet", href="/style.css")
-			else
-				style
-					include ../build/style.min.css
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1.0")
+    title Matthias Beitl
+    meta(name="description" content="Virtual home sweet home of web developer Matthias Beitl. His brain waves broadcast from Vienna, Austria.")
+    block icons
+      link(rel="icon", sizes="16x16", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABR0lEQVQoz13OPUvVcQDF8c/vf28qXrGhNCEhcvChBwtaGhp6ASUEDQ3V3lZvoZfQ5tJLEJoigpbA2rVEhZ6G6Nb1oWuUXvKeBg2tc5YD53vglCTYcN+C677o02/HqAkPLSqqrqJrzrJ3rlnXcMOMttd+6LWtInat6ZjQ9Mm4s8Z8NWvJd11VFE0NdQ+sOmHMppYpFaKod8WgWy66YM6oKWuWvHLOL6taynaKuqhZtGPHpI5vVkxbd9eKassb79XsOqpmwGctPx0zZFMT9Tt+u+mkPgOWdGxp6zpuxrg2SpUh90y4asSs5z7qMSyeoAi1yHSe5lkW8zgynDMZjJRUESElciVvs5Dbkf707xV/LVJSz+m8zHJGsjf4D5AjaWQojzKfy+n7ByiC/UO9Lpn0wgcH2geKOG9AU0vbYdUP4inFhh41u4eAP4qapBCelu3uAAAAAElFTkSuQmCC")
+      link(rel="icon", type="image/jpeg", sizes="300x300", href="/photo.jpg")
+      link(rel="apple-touch-icon", href="/photo.jpg")
+    block stylesheets
+      if verbose
+        link(rel="stylesheet", href="/style.css")
+      else
+        style
+          include ../build/style.min.css
 
-	body
-		main.vcard(role="main")
-			#profile
-				.url
-					a(rel="home", href="http://matthias.beitl.net/")
-						i http://
-						| matthias.beitl.net
-						i /
-				.photo
-					img(alt="", src="photo.jpg")
-				h1.fn Matthias Beitl
-				h2.category Web Developer
-				.adr
-					a(href="https://maps.google.com/maps?q=vienna+austria")
-						span.locality Vienna
-						| , 
-						span.country-name Austria
-			#about
-				h3.print About
-				p.note
-					| Matthias Beitl is a front-end web craftsman who indulges Cascading Style Sheets and their friends. If you are into 
-					a(rel="me", href="https://github.com/cssence") coding
-					|  you will find him as 
-					a(rel="me", href="https://twitter.com/cssence") @cssence
-					|  on 
-					a(rel="me", href="http://cssence.com/") The&nbsp;Internets
-					| .
-		block errors
-		nav(role="navigation")
-			h3.print On the web
-			ul
-				each bookmark in data
-					li
-						a(rel=bookmark.rel, href=bookmark.url, class=bookmark.id)!= bookmark.iconSrc + " " + bookmark.title + " "
-							b= bookmark.name
-		footer(role="contentinfo")
-			p.legal
-				a(rel="license", href="https://github.com/cssence/matthias.beitl.net/blob/gh-pages/LICENSE", title="Licensed under the GNU General Public License (GPLv3)") Copyleft 2010-2015 Matthias Beitl
+  body
+    main.vcard(role="main")
+      #profile
+        .url
+          a(rel="home", href="http://matthias.beitl.net/")
+            i http://
+            | matthias.beitl.net
+            i /
+        .photo
+          img(alt="", src="photo.jpg")
+        h1.fn Matthias Beitl
+        h2.category Web Developer
+        .adr
+          a(href="https://maps.google.com/maps?q=vienna+austria")
+            span.locality Vienna
+            | , 
+            span.country-name Austria
+      #about
+        h3.print About
+        p.note
+          | Matthias Beitl is a front-end web craftsman who indulges Cascading Style Sheets and their friends. If you are into 
+          a(rel="me", href="https://github.com/cssence") coding
+          |  you will find him as 
+          a(rel="me", href="https://twitter.com/cssence") @cssence
+          |  on 
+          a(rel="me", href="http://cssence.com/") The&nbsp;Internets
+          | .
+    block errors
+    nav(role="navigation")
+      h3.print On the web
+      ul
+        each bookmark in bookmarks
+          li
+            a(rel=bookmark.rel, href=bookmark.url, class=bookmark.id)!= bookmark.iconSrc + " " + bookmark.title + " "
+              b= bookmark.name
+    footer(role="contentinfo")
+      p.legal
+        a(rel="license", href="https://github.com/cssence/matthias.beitl.net/blob/gh-pages/LICENSE", title="Licensed under the GNU General Public License (GPLv3)") Copyleft 2010-2015 Matthias Beitl
