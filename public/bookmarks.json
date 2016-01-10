@@ -1,9 +1,10 @@
 [
-  {"url": "http://cssence.com/", "title": "Website", "name": "cssence.com", "color": "#d34b6c", "icon": "http://matthias.beitl.net/icon-home.svg"},
-  {"url": "https://github.com/cssence", "title": "github", "name": "/cssence", "color": "#444", "icon": "http://matthias.beitl.net/icon-github.svg"},
-  {"url": "https://twitter.com/cssence", "title": "Twitter", "name": "@cssence", "color": "#4099ff", "icon": "http://matthias.beitl.net/icon-twitter.svg"},
-  {"url": "http://codepen.io/cssence/", "title": "codepen", "name": "/cssence", "color": "#252527", "icon": "http://matthias.beitl.net/icon-codepen.svg"},
-  {"url": "https://www.xing.com/profile/Matthias_Beitl", "title": "xing", "name": "/Matthias_Beitl", "color": "#006464", "icon": "http://matthias.beitl.net/icon-xing.svg"},
-  {"url": "https://at.linkedin.com/in/matthiasbeitl", "title": "Linkedin", "name": "at…/matthiasbeitl", "color": "#007bb6", "icon": "http://matthias.beitl.net/icon-linkedin.svg"},
-  {"url": "http://matthias.beitl.net/", "title": "vCard" , "name": "matthias.beitl.net", "icon": "http://matthias.beitl.net/icon-profile.svg"}
+	{"url": "http://cssence.com/", "title": "Website", "color": "#d34b6c", "icon": "http://matthias.beitl.net/icon-home.svg"},
+	{"url": "https://github.com/cssence", "title": "GitHub", "color": "#444", "icon": "http://matthias.beitl.net/icon-github.svg"},
+	{"url": "https://twitter.com/cssence", "title": "Twitter", "color": "#4099ff", "icon": "http://matthias.beitl.net/icon-twitter.svg"},
+	{"url": "http://codepen.io/cssence/", "title": "CodePen", "color": "#252527", "icon": "http://matthias.beitl.net/icon-codepen.svg"},
+	{"url": "https://medium.com/@cssence", "title": "Medium", "color": "#333", "icon": "http://matthias.beitl.net/icon-medium.svg"},
+	{"url": "https://www.xing.com/profile/Matthias_Beitl", "title": "xing", "color": "#006464", "icon": "http://matthias.beitl.net/icon-xing.svg"},
+	{"url": "https://at.linkedin.com/in/matthiasbeitl", "title": "Linkedin", "color": "#007bb6", "icon": "http://matthias.beitl.net/icon-linkedin.svg"},
+	{"url": "http://matthias.beitl.net/", "title": "Résumé", "color": "#bada55", "icon": "http://matthias.beitl.net/icon-profile.svg"}
 ]

@@ -1,82 +1,73 @@
-/*jslint node: true */
-"use strict";
 module.exports = function (grunt) {
+	"use strict";
+	grunt.file.defaultEncoding = "utf8";
 
-  // Project configuration.
-  grunt.file.defaultEncoding = "utf8";
-  grunt.initConfig({
+	var data = require("./config.js")("grunt");
 
-    // clean staging directory
-    clean: {
-      build: ["build"]
-    },
+	grunt.initConfig({
 
-    // minify css
-    cssmin: {
-      css: {
-        files: {
-          "build/style.min.css": ["static/style.css"]
-        }
-      }
-    },
+		// clean staging directory
+		clean: {
+			build: ["build"]
+		},
 
-    // jade compile
-    jade: {
-      compile: {
-        options: {
-          data: {
-            compile: true,
-            bookmarks: (function () {
-              var bookmarks, homeUrl;
-              homeUrl = grunt.file.readJSON("package.json").homepage;
-              bookmarks = grunt.file.readJSON("public/bookmarks.json");
-              bookmarks.forEach(function (bookmark) {
-                bookmark.id = bookmark.title.toLowerCase();
-                bookmark.rel = bookmark.url === homeUrl ? "home" : "me";
-                bookmark.iconSrc = grunt.file.read("public/" + bookmark.icon.split(homeUrl)[1]);
-              });
-              return bookmarks;
-            }())
-          }
-        },
-        files: {
-          "public/index.html": ["views/index.jade"],
-          "public/404.html": ["views/404.jade"]
-        }
-      }
-    },
+		// prefix and minify css
+		postcss: {
+			options: {
+				processors: [
+					require("autoprefixer")(),
+					require("cssnano")()
+				]
+			},
+			styles: {
+				files: {
+					"build/style.min.css": ["static/style.css"]
+				}
+			}
+		},
 
-    // copy assets that are to-be-hosted
-    copy: {
-      assets: {
-        files: [
-          {expand: true, flatten: true, src: [
-            "LICENSE"
-          ], dest: "public/"}
-        ]
-      }
-    }
+		// jade compile
+		jade: {
+			compile: {
+				options: {
+					data: data
+				},
+				files: {
+					"public/index.html": ["views/index.jade"],
+					"public/404.html": ["views/404.jade"]
+				}
+			}
+		},
 
-  });
+		// copy assets that are to-be-hosted
+		copy: {
+			assets: {
+				files: [
+					{expand: true, flatten: true, src: ["LICENSE"], dest: "public/"}
+				]
+			}
+		}
 
-  // Load the plugins
-  grunt.loadNpmTasks("grunt-contrib-clean");
-  grunt.loadNpmTasks("grunt-contrib-cssmin");
-  grunt.loadNpmTasks("grunt-contrib-jade");
-  grunt.loadNpmTasks("grunt-contrib-copy");
+	});
 
-  grunt.registerTask(
-    "build",
-    "Prepares project deployment (minification)",
-    ["clean:build", "cssmin:css"]
-  );
-  grunt.registerTask(
-    "release",
-    "Deploys the project (copy assets and generate HTML)",
-    ["clean:build", "cssmin:css", "jade:compile", "copy:assets"]
-  );
+	// Load the plugins
+	grunt.loadNpmTasks("grunt-contrib-clean");
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
+	grunt.loadNpmTasks("grunt-contrib-jade");
+	grunt.loadNpmTasks("grunt-contrib-copy");
 
-  // Default task(s).
-  grunt.registerTask("default", ["release"]);
+	grunt.registerTask(
+		"build",
+		"Prepares project deployment (minification)",
+		["clean:build", "cssmin:css"]
+	);
+	grunt.registerTask(
+		"release",
+		"Deploys the project (copy assets and generate HTML)",
+		["build", "jade:compile", "copy:assets"]
+	);
+
+	// Default task(s).
+	grunt.registerTask("default", ["release"]);
 
 };

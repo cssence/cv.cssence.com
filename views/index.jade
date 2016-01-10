@@ -1,18 +1,22 @@
 extends ./layout.jade
 
+block content
+	include cv
+	include links
+
 //
-  #vcard
+	#vcard
 
-  #about (= #vcard .note)
+	#about (= #vcard .note)
 
-  #elsewhere
+	#elsewhere
 
-  #resume
+	#resume
 
-  #legal | #disclaimer
-    no cookies
-    copyleft .signature
-    canPrint learnMore
+	#legal | #disclaimer
+		no cookies
+		copyleft .signature
+		canPrint learnMore
 
-  #hire | #recruiting
-    17% getInTouch
+	#hire | #recruiting
+		17% getInTouch
