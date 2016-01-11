@@ -1,7 +1,7 @@
 [
 	{"url": "http://cssence.com/", "title": "Website", "color": "#d34b6c", "icon": "http://matthias.beitl.net/icon-home.svg"},
-	{"url": "https://github.com/cssence", "title": "GitHub", "color": "#444", "icon": "http://matthias.beitl.net/icon-github.svg"},
 	{"url": "https://twitter.com/cssence", "title": "Twitter", "color": "#4099ff", "icon": "http://matthias.beitl.net/icon-twitter.svg"},
+	{"url": "https://github.com/cssence", "title": "GitHub", "color": "#444", "icon": "http://matthias.beitl.net/icon-github.svg"},
 	{"url": "http://codepen.io/cssence/", "title": "CodePen", "color": "#252527", "icon": "http://matthias.beitl.net/icon-codepen.svg"},
 	{"url": "https://medium.com/@cssence", "title": "Medium", "color": "#333", "icon": "http://matthias.beitl.net/icon-medium.svg"},
 	{"url": "https://www.xing.com/profile/Matthias_Beitl", "title": "xing", "color": "#006464", "icon": "http://matthias.beitl.net/icon-xing.svg"},

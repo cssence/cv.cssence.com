@@ -1,6 +1,6 @@
 nav#elsewhere(role="navigation")
-	h3.print On the web
-	ul
+	h2.print On the web
+	ul.bookmarks
 		each bookmark in bookmarks
-			li
+			li.bookmark
 				a(rel=bookmark.rel, href=bookmark.url, class=bookmark.id)!= bookmark.iconRaw + " " + bookmark.title

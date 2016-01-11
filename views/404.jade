@@ -1,5 +1,9 @@
 extends ./layout.jade
 
+append stylesheets
+	style body{height:100vh;margin-top:0;padding:14em 0}
+
 block content
-	main(role="alert")
-		p Nothing to be found here. How about you go to the #[a(href="/") Résumé] instead.
+	main.paper(role="alert")
+		h2 404
+		p.note Nothing to be found here.#[br]How about you go to the #[a(href="/") Résumé] instead.

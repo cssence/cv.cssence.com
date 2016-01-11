@@ -15,12 +15,12 @@ html(lang="en")
 			style(media="screen")
 				each bookmark in bookmarks
 					if bookmark.color
-						= "." + bookmark.id + "{border-color:" + bookmark.color + ";color:" + bookmark.color + "}." + bookmark.id + " path{fill:" + bookmark.color + "}"
+						//-= "." + bookmark.id + "{border-color:" + bookmark.color + ";color:" + bookmark.color + "}." + bookmark.id + " path{fill:" + bookmark.color + "}"
+						//-= "." + bookmark.id + "{border-color:" + bookmark.color + "}"
+						= "." + bookmark.id + ":focus,." + bookmark.id + ":hover{background-color:" + bookmark.color + "}"
 		block icons
 			link(rel="icon", type="image/jpeg", sizes="300x300", href="/photo.jpg")
 			link(rel="icon", type="image/x-icon", sizes="16x16 32x32", href="/favicon.ico")
 
 	body
-		include vcard
 		block content
-		include footer
