@@ -8,21 +8,23 @@ module.exports = function (grunt) {
 
 		// clean staging directory
 		clean: {
-			build: ["build"]
+			generated: ["public/*.min.*", "public/*.html"]
 		},
 
-		// prefix and minify css
+		// prefix css
 		postcss: {
 			options: {
 				processors: [
-					require("autoprefixer")(),
+					require("autoprefixer")({ browsers: ["last 3 versions", "IE > 8"] }),
 					require("cssnano")()
 				]
 			},
 			styles: {
-				files: {
-					"build/style.min.css": ["static/style.css"]
-				}
+				expand: true,
+				cwd: "public/",
+				src: "*.css",
+				dest: "public/",
+				ext: ".min.css"
 			}
 		},
 
@@ -30,11 +32,18 @@ module.exports = function (grunt) {
 		jade: {
 			compile: {
 				options: {
-					data: data
+					data: function (dest, src) {
+						data.path = dest.slice("public".length, -".html".length);
+						if (/\/index$/.test(data.path)) {
+							data.path = data.path.slice(0, -"index".length);
+						}
+						return data;
+					}
 				},
 				files: {
-					"public/index.html": ["views/index.jade"],
-					"public/404.html": ["views/404.jade"]
+					"public/index.html": "views/vcard.jade",
+					"public/cv.html": "views/cv.jade",
+					"public/404.html": "views/404.jade"
 				}
 			}
 		},
@@ -52,14 +61,14 @@ module.exports = function (grunt) {
 
 	// Load the plugins
 	grunt.loadNpmTasks("grunt-contrib-clean");
-	grunt.loadNpmTasks("grunt-contrib-cssmin");
+	grunt.loadNpmTasks("grunt-postcss");
 	grunt.loadNpmTasks("grunt-contrib-jade");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 
 	grunt.registerTask(
 		"build",
 		"Prepares project deployment (minification)",
-		["clean:build", "cssmin:css"]
+		["clean:generated", "postcss:styles"]
 	);
 	grunt.registerTask(
 		"release",

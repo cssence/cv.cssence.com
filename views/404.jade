@@ -1,9 +1,16 @@
 extends ./layout.jade
 
-append stylesheets
-	style body{height:100vh;margin-top:0;padding:14em 0}
-
+append variables
+	- attr.role = "alert"
+	- attr.title = "Page not found"
+	
 block content
-	main.paper(role="alert")
-		h2 404
-		p.note Nothing to be found here.#[br]How about you go to the #[a(href="/") Résumé] instead.
+	h1 404
+	p.note
+		| Nothing to be found here.
+		br
+		| How about you take a look at the 
+		a(href="/cv") résumé
+		|  or the 
+		a(href="/") contact card
+		|  instead.

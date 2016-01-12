@@ -14,7 +14,12 @@ app.use(require("serve-static")(dir.public, {index: false}));
 app.set("views", dir.views);
 app.set("view engine", "jade");
 app.use(function (req, res) {
-	res.render(req.url === "/" ? "index" : "404", data);
+	var map = {
+		"/": "vcard",
+		"/cv": "cv"
+	};
+	data.path = req.path;
+	res.render(map[req.path] || "404", data);
 });
 
 // Http server

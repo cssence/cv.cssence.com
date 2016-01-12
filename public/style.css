@@ -8,6 +8,9 @@ nav ul {
 	list-style: none;
 	padding: 0;
 }
+img {
+	max-width: 100%;
+}
 
 @media print {
 	.screen {
@@ -15,63 +18,55 @@ nav ul {
 	}
 	* {
 		color: #000;
+		box-shadow: none !important;
 		text-decoration: none;
 	}
 	@page {
 		margin: 20mm;
 	}
-	.page-break {
-		page-break-before: always;
-	}
 	html {
 		font: 11pt/1.25 serif;
 	}
 	header {
-		position: relative;
-		width: 38mm;
-		float: right;
-		margin: 8.375em 0 1em 1em;
-		padding-top: 38mm;
-	}
-	img {
 		position: absolute;
-		top: 0;
+		width: 38mm;
+		top: 45mm;
 		right: 0;
-		width: 100%;
+	}
+	.note {
+		margin-right: 60mm;
 	}
 	h1 {
-		font-size: inherit;
-	}
-	main {
-		padding-top: 5em;
-	}
-	main h2 {
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-		margin: 0;
+		margin: 0 0 2em;
 		font-size: 2.25em;
 		text-align: center;
 	}
-	h1 {
-		margin: .5em 0 -.5em;
+	h1 .print {
+		display: block;
+		font-family: sans-serif;
+		font-size: 8pt;
 	}
-	nav h2,
-	h3 {
+	h2 {
 		margin: 2em 0 1em;
 		font-family: monospace;
 		font-size: 1.5em;
 	}
-	h4 {
+	h3 {
 		margin: 2em 0 -.5em;
 		font-size: inherit;
 	}
-	h5 {
+	h4 {
 		margin: 1em 0;
 		font-size: inherit;
 		font-style: italic;
 		font-weight: inherit;
+	}
+	.page-break {
+		page-break-before: always;
+	}
+	p,
+	li {
+		page-break-inside: avoid;
 	}
 	p,
 	ul,
@@ -83,23 +78,20 @@ nav ul {
 	dt {
 		position: absolute;
 	}
-	dd {
-		margin: .5em 0;
-	}
 	ul {
 		list-style-position: outside;
 		padding-left: 0;
 	}
 	dd,
 	main ul,
-	h3 ~ p,
-	h5 ~ p,
+	h2 ~ p,
+	h4 ~ p,
 	nav a::before {
 		margin-left: 7em;
 	}
 	main ul,
-	h3 ~ p,
-	h5 ~ p {
+	h2 ~ p,
+	h4 ~ p {
 		margin-right: 3.5em;
 	}
 	.timestamp {
@@ -115,9 +107,6 @@ nav ul {
 		height: .75em;
 		width: .75em;
 		margin-right: 1ex;
-	}
-	footer {
-		font-size: 75%;
 	}
 }
 @media only screen {
@@ -143,44 +132,61 @@ nav ul {
 		font: 16px/1.25 sans-serif;
 	}
 	body {
-		background: #222;
-		background: linear-gradient(180deg, rgba(186,218,85,.3) 0, #bada55 200vw), linear-gradient(180deg, rgba(0,0,0,.3) 0, #000 100vw), url(/photo.jpg) top / 100% auto no-repeat #000;
+		background: linear-gradient(0, rgba(186,218,85,.7), rgba(186,218,85,.7)),
+		            linear-gradient(180deg, rgba(0,0,0,.3) 0, #000 100vw),
+		            url(/photo.jpg) top / 100% auto no-repeat;
+		background-attachment: fixed;
 	}
-	.paper {
-		max-width: 38em;
-		margin: 2px auto;
-		padding: 3em 1em;
+	.segment::before {
+		content: "";
+		position: absolute;
+		right: 0;
+		bottom: 100%;
+		left: 0;
+		border: 0 solid #000;
+		border-top-color: transparent;
+		border-width: 4em 50vw 0;
+	}
+	.segment {
+		position: relative;
+		z-index: 1;
+		background: #000;
+	}
+	main.segment:before {
+		border-color: transparent #fff #fff;
+	}
+	main.segment {
+		padding: 4em 1em 8em;
 		background: #fff;
 		color: #222;
 		font-family: serif;
 	}
-	.paper ul {
+	section {
+		max-width: 35em;
+		margin: 0 auto;
+	}
+	main ul {
 		padding-left: 1em;
 	}
-	.paper li {
-		margin: .25em 0;
+	main li {
+		margin: .5em 0;
 	}
-	.paper a {
+	main a {
 		box-shadow: 0 -.25em rgba(186,218,85,.6) inset;
+		transition: border-width .1s ease;
 	}
-	.paper a:focus,
-	.paper a:hover {
+	main a:focus,
+	main a:hover {
 		border-bottom: 2px solid rgba(186,218,85,.6);
 	}
 	h1 {
-		margin: 0;
-		font-size: 2em;
-	}
-	h2 {
 		margin: 0 0 2em;
 		font-size: 1.75em;
 		text-align: center;
 	}
-	h3 {
-		margin: 2.8em 0 1.5em -2rem;
+	h2 {
+		margin: 2.8em 0 1.5em;
 		font-size: 1.25em;
-		padding-left: .75rem;
-		border-left: 1.25rem solid #eff4f5;
 		letter-spacing: .3ex;
 		line-height: 1;
 	}
@@ -193,11 +199,11 @@ nav ul {
 		font-family: monospace;
 		text-transform: uppercase;
 	}
-	h4 {
+	h3 {
 		margin: 2.25em 0 -.75em;
 		font-weight: 700;
 	}
-	h5 {
+	h4 {
 		margin: 2.25em 0 .75em;
 	}
 	ul,
@@ -212,7 +218,7 @@ nav ul {
 	}
 	.timestamp {
 		float: right;
-		margin-left: .33ex;
+		margin-left: 1ex;
 	}
 	.timestamp,
 	dt {
@@ -227,29 +233,33 @@ nav ul {
 	dd {
 		margin: .25em 0;
 	}
-	#profile {
-		position: relative;
-		padding: 16.5em 1em 15.375em;
+	header {
+		padding: 16em 1em 19em;
 		color: #fff;
 		text-align: center;
 		text-shadow: 0 1px #000;
 	}
-	.sub {
-		margin: 0;
+	.fn {
+		margin: 0 0 .5em;
+		font-size: 2em;
 	}
-	.sub-1 {
+	.role {
 		font-size: 1.25em;
 	}
-	.sub-2 {
+	.adr {
 		font-size: .875em;
 		opacity: .75;
 	}
 	.country-name {
 		text-transform: uppercase;
 	}
+	.tel-area {
+		margin: 0 .5ex;
+	}
 	.photo {
+		overflow: hidden;
 		position: absolute;
-		top: 6em;
+		top: 5em;
 		left: 50%;
 		height: 9.375em;
 		width: 9.375em;
@@ -263,11 +273,13 @@ nav ul {
 		margin-left: auto;
 		max-width: 18em;
 	}
-	#elsewhere {
+	nav.segment {
 		position: absolute;
+		z-index: 0;
 		top: 28em;
 		right: 0;
 		left: 0;
+		padding: 0 0 4em;
 	}
 	.bookmarks {
 		margin: 0;
@@ -275,40 +287,54 @@ nav ul {
 	}
 	.bookmark {
 		display: inline-block;
+		position: relative;
 		width: 25%;
 		padding: 2px;
-		background: #000;
+	}
+	.bookmark:nth-child(4n - 3),
+	.bookmark:nth-child(4n) {
+		top: -2em;
 	}
 	.bookmark a {
 		display: block;
-		padding: 1em 0;
+		height: 5rem;
+		width: 5rem;
+		margin: 0 auto;
+		padding: .5em 0;
+		border-radius: 50%;
 		font-size: .875em;
-		transition: background-color .3s linear;
+		transition: background-color .5s ease;
 	}
 	.bookmark svg {
+		overflow: visible;
 		display: block;
 		width: 2em;
 		height: 2em;
-		margin: 0 auto .5em;
+		margin: .5em auto;
 	}
 	.bookmark path {
 		fill: #fff;
 	}
 	footer {
-		padding: 1.25em 2em .5em;
-		background: #000;
-		font-size: 75%;
+		padding: 1.25em 1em .5em;
 		text-align: center;
+	}
+	footer a {
+		display: inline-block;
+		padding: .5em 1rem;
+		font-size: .875em;
+	}
+	.downloads a {
+		width: 8em;
+	}
+	.tweak {
+		opacity: .75;
 	}
 }
 @media only screen and (min-width: 28em) {
-	.paper {
-		padding: 3em 2em;
-	}
-}
-@media only screen and (min-width: 38em) {
-	.paper {
-		margin: 3em auto;
+	main.segment {
+		padding-right: 2em;
+		padding-left: 2em;
 	}
 	dt {
 		position: absolute;
@@ -318,17 +344,40 @@ nav ul {
 	dd {
 		margin-left: 8em;
 	}
-	body {
-		margin-top: 5em;
+}
+@media only screen and (min-width: 37.5em) {
+	footer::after {
+		content: "";
+		clear: both;
+		display: table;
 	}
-	#profile {
-		padding-bottom: 3em;
+	footer a {
+		display: inline-block;
 	}
-	#elsewhere {
-		top: 0;
+	.legal {
+		float: left;
+	}
+	.downloads {
+		float: right;
+	}
+	.downloads a {
+		width: auto;
+	}
+}
+@media only screen and (min-width: 48em) {
+	header {
+		padding-bottom: 14.5em;
 	}
 	.bookmark {
 		width: 12.5%;
+	}
+	.bookmark:nth-child(2),
+	.bookmark:nth-child(7) {
+		top: -1em;
+	}
+	.bookmark:nth-child(4),
+	.bookmark:nth-child(5) {
+		top: 1em;
 	}
 }
 @media only screen and (min-width: 60em) {

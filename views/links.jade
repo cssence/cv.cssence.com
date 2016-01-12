@@ -1,6 +1,0 @@
-nav#elsewhere(role="navigation")
-	h2.print Links
-	ul.bookmarks
-		each bookmark in bookmarks
-			li.bookmark
-				a(rel=bookmark.rel, href=bookmark.url, class=bookmark.id)!= bookmark.iconRaw + " " + bookmark.title

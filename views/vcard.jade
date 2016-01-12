@@ -1,24 +1,18 @@
-header.vcard
-	#profile
-		h1.fn Matthias Beitl
-		p
-			img.photo(alt="Photo of Matthias Beitl", src="photo.jpg")
-		p.sub.sub-1
-			span.role Web Developer
-		p.sub.sub-2.screen
-			a.adr(href="https://maps.google.com/maps?q=vienna+austria")
-				span.locality Vienna
-				| , 
-				span.country-name Austria
-		p.print
-			a.url(rel="home", href="http://matthias.beitl.net/") http://matthias.beitl.net/
-	section.paper.screen#about
-		h2 About
-		p.note
-			| Matthias is a front-end web craftsman who indulges Cascading Style Sheets and their friends. If you are into 
-			a(rel="me", href="https://github.com/cssence") coding
-			|	you will find him as 
-			a(rel="me", href="https://twitter.com/cssence") @cssence
-			|	on 
-			a(rel="me", href="http://cssence.com/") The&nbsp;Internets
-			| .
+extends ./layout.jade
+
+append variables
+	- attr.tags = "vcard"
+	- attr.description = "Matthias Beitl, web developer and CSS enthusiast, to be found as @cssence on the Internet."
+	- attr.alternate = {type: "text/vcard", href: vcf}
+
+block content
+	h1 About
+		span.print  Matthias Beitl
+	p.note
+		| Matthias Beitl is a front-end web craftsman who indulges Cascading Style Sheets and their friends. If you are into 
+		a(rel="me", href="https://github.com/cssence") coding
+		|	you will find him as 
+		a(rel="me", href="https://twitter.com/cssence") @cssence
+		|	on 
+		a(rel="me", href="http://cssence.com/") the&nbsp;Internet
+		| .

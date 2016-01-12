@@ -14,11 +14,12 @@ module.exports = function (environment) {
 	var bookmarks = require(path.join(pkg.config.paths.public, "bookmarks.json"));
 	bookmarks.forEach(function (bookmark) {
 		bookmark.id = bookmark.icon.split("-")[1].split(".")[0];
-		bookmark.rel = bookmark.url === pkg.homepage ? "home" : "me";
 		bookmark.iconRaw = fs.readFileSync(path.join(pkg.config.paths.public, bookmark.icon.split(pkg.homepage)[1]), "utf8");
 	});
 
 	return {
+		vcf: "/downloads/matthias-beitl.vcf",
+		cv: "/downloads/cv_matthias-beitl_2016-01.pdf",
 		bookmarks: bookmarks,
 		pkg: pkg,
 		verbose: environment !== "grunt"
