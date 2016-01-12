@@ -15,8 +15,6 @@ html(lang="en")
 			style(media="screen")
 				each bookmark in bookmarks
 					if bookmark.color
-						//-= "." + bookmark.id + "{border-color:" + bookmark.color + ";color:" + bookmark.color + "}." + bookmark.id + " path{fill:" + bookmark.color + "}"
-						//-= "." + bookmark.id + "{border-color:" + bookmark.color + "}"
 						= "." + bookmark.id + ":focus,." + bookmark.id + ":hover{background-color:" + bookmark.color + "}"
 		block icons
 			link(rel="icon", type="image/jpeg", sizes="300x300", href="/photo.jpg")

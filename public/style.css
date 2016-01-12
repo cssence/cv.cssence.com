@@ -4,29 +4,9 @@ main {
 body {
 	margin: 0;
 }
-h1 {
-	margin: 0;
-	font-size: 2em;
-}
-.category {
-	margin: 0;
-	font-size: 1.25em;
-}
-.adr {
-	margin: 0;
-	font-size: .875em;
-}
-.country-name {
-	text-transform: uppercase;
-}
 nav ul {
 	list-style: none;
-	margin: 0;
 	padding: 0;
-}
-.timestamp {
-	float: right;
-	margin-left: .33ex;
 }
 
 @media print {
@@ -40,21 +20,104 @@ nav ul {
 	@page {
 		margin: 20mm;
 	}
-	html {
-		font: 16pt/1.4 serif;
+	.page-break {
+		page-break-before: always;
 	}
-	footer {
-		font-size: 75%;
+	html {
+		font: 11pt/1.25 serif;
+	}
+	header {
+		position: relative;
+		width: 38mm;
+		float: right;
+		margin: 8.375em 0 1em 1em;
+		padding-top: 38mm;
+	}
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+	}
+	h1 {
+		font-size: inherit;
+	}
+	main {
+		padding-top: 5em;
+	}
+	main h2 {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		margin: 0;
+		font-size: 2.25em;
+		text-align: center;
+	}
+	h1 {
+		margin: .5em 0 -.5em;
+	}
+	nav h2,
+	h3 {
+		margin: 2em 0 1em;
+		font-family: monospace;
+		font-size: 1.5em;
+	}
+	h4 {
+		margin: 2em 0 -.5em;
+		font-size: inherit;
+	}
+	h5 {
+		margin: 1em 0;
+		font-size: inherit;
+		font-style: italic;
+		font-weight: inherit;
+	}
+	p,
+	ul,
+	li,
+	dl,
+	dd {
+		margin: .5em 0;
+	}
+	dt {
+		position: absolute;
+	}
+	dd {
+		margin: .5em 0;
+	}
+	ul {
+		list-style-position: outside;
+		padding-left: 0;
+	}
+	dd,
+	main ul,
+	h3 ~ p,
+	h5 ~ p,
+	nav a::before {
+		margin-left: 7em;
+	}
+	main ul,
+	h3 ~ p,
+	h5 ~ p {
+		margin-right: 3.5em;
+	}
+	.timestamp {
+		position: absolute;
+		right: 0;
 	}
 	nav a::before {
 		content: attr(href);
 		display: block;
-		float: right;
-		width: 70%;
+		position: absolute;
 	}
-	img {
-		float: right;
-		width: 30mm;
+	svg {
+		height: .75em;
+		width: .75em;
+		margin-right: 1ex;
+	}
+	footer {
+		font-size: 75%;
 	}
 }
 @media only screen {
@@ -81,7 +144,7 @@ nav ul {
 	}
 	body {
 		background: #222;
-		background: linear-gradient(0, rgba(75,92,20,.5), rgba(75,92,20,.5)), linear-gradient(180deg, rgba(0,0,0,0) 0, #000 100vw), url(/photo.jpg) top / 100% auto no-repeat #222;
+		background: linear-gradient(180deg, rgba(186,218,85,.3) 0, #bada55 200vw), linear-gradient(180deg, rgba(0,0,0,.3) 0, #000 100vw), url(/photo.jpg) top / 100% auto no-repeat #000;
 	}
 	.paper {
 		max-width: 38em;
@@ -104,18 +167,30 @@ nav ul {
 	.paper a:hover {
 		border-bottom: 2px solid rgba(186,218,85,.6);
 	}
+	h1 {
+		margin: 0;
+		font-size: 2em;
+	}
 	h2 {
-		margin: 0 0 1em;
+		margin: 0 0 2em;
 		font-size: 1.75em;
 		text-align: center;
 	}
 	h3 {
-		margin: 3em 0 1.5em -1rem;
+		margin: 2.8em 0 1.5em -2rem;
 		font-size: 1.25em;
 		padding-left: .75rem;
-		border-left: .25rem solid #ccc;
-		color: #ccc;
-		letter-spacing: .33ex;
+		border-left: 1.25rem solid #eff4f5;
+		letter-spacing: .3ex;
+		line-height: 1;
+	}
+	b {
+		display: inline-block;
+		margin-left: -.3ex;
+		padding-left: .3ex;
+		background-color: #222;
+		color: #fff;
+		font-family: monospace;
 		text-transform: uppercase;
 	}
 	h4 {
@@ -130,9 +205,18 @@ nav ul {
 	p {
 		margin: .75em 0 1.5em;
 	}
+	.company {
+		margin-left: -.3ex;
+		padding: 0 .3ex;
+		background-color: rgba(186,218,85,.3);
+	}
+	.timestamp {
+		float: right;
+		margin-left: .33ex;
+	}
 	.timestamp,
 	dt {
-		color: #89a;
+		color: #9ea3ab;
 		font-family: sans-serif;
 		font-size: .875em;
 		line-height: 1.429;
@@ -145,13 +229,23 @@ nav ul {
 	}
 	#profile {
 		position: relative;
-		padding: 16.5em 1em 15.25em;
+		padding: 16.5em 1em 15.375em;
 		color: #fff;
 		text-align: center;
 		text-shadow: 0 1px #000;
 	}
-	.adr {
+	.sub {
+		margin: 0;
+	}
+	.sub-1 {
+		font-size: 1.25em;
+	}
+	.sub-2 {
+		font-size: .875em;
 		opacity: .75;
+	}
+	.country-name {
+		text-transform: uppercase;
 	}
 	.photo {
 		position: absolute;
@@ -164,8 +258,10 @@ nav ul {
 		border-radius: 50%;
 		box-shadow: 0 1px #000;
 	}
-	.more {
-		margin-top: 6em;
+	.note {
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 18em;
 	}
 	#elsewhere {
 		position: absolute;
@@ -174,6 +270,7 @@ nav ul {
 		left: 0;
 	}
 	.bookmarks {
+		margin: 0;
 		text-align: center;
 	}
 	.bookmark {
@@ -198,7 +295,7 @@ nav ul {
 		fill: #fff;
 	}
 	footer {
-		padding: 1em 2em;
+		padding: 1.25em 2em .5em;
 		background: #000;
 		font-size: 75%;
 		text-align: center;
@@ -207,15 +304,6 @@ nav ul {
 @media only screen and (min-width: 28em) {
 	.paper {
 		padding: 3em 2em;
-	}
-	.note {
-		margin: 0 auto;
-		max-width: 18em;
-	}
-	h3 {
-		margin-left: -2rem;
-		padding-left: 1.5rem;
-		border-left: .5rem solid #ccc;
 	}
 }
 @media only screen and (min-width: 38em) {
