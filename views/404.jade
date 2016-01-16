@@ -1,5 +1,16 @@
 extends ./layout.jade
 
-block errors
-  .screen(role="alert")
-    p.error This page does not exist.
+append variables
+	- attr.role = "alert"
+	- attr.title = "Page not found"
+	
+block content
+	h1 404
+	p.note
+		| Nothing to be found here.
+		br
+		| How about you take a look at the 
+		a(href="/cv") résumé
+		|  or the 
+		a(href="/") contact card
+		|  instead.

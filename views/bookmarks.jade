@@ -1,0 +1,11 @@
+nav.segment#elsewhere
+	h2.print Links
+	ul.bookmarks
+		- var count = 1
+		each bookmark in bookmarks
+			- var siteUrl = bookmark.url.indexOf(pkg.homepage) === 0
+			if count <= 8 && (!siteUrl || bookmark.url.split("/")[3] !== path.slice(1))
+				- count += 1;
+				li.bookmark
+					a(class=bookmark.id, href=bookmark.url, rel=bookmark.rel, tabindex="1")
+						!= bookmark.iconRaw + " " + bookmark.title

@@ -1,0 +1,392 @@
+main {
+	display: block; /*IE<11*/
+}
+body {
+	margin: 0;
+}
+nav ul {
+	list-style: none;
+	padding: 0;
+}
+img {
+	max-width: 100%;
+}
+
+@media print {
+	.screen {
+		display: none;
+	}
+	* {
+		color: #000;
+		box-shadow: none !important;
+		text-decoration: none;
+	}
+	@page {
+		margin: 20mm;
+	}
+	html {
+		font: 11pt/1.25 serif;
+	}
+	header {
+		position: absolute;
+		width: 38mm;
+		top: 45mm;
+		right: 0;
+	}
+	.note {
+		margin-right: 60mm;
+	}
+	h1 {
+		margin: 0 0 2em;
+		font-size: 2.25em;
+		text-align: center;
+	}
+	h1 .print {
+		display: block;
+		font-family: sans-serif;
+		font-size: 8pt;
+	}
+	h2 {
+		margin: 2em 0 1em;
+		font-family: monospace;
+		font-size: 1.5em;
+	}
+	h3 {
+		margin: 2em 0 -.5em;
+		font-size: inherit;
+	}
+	h4 {
+		margin: 1em 0;
+		font-size: inherit;
+		font-style: italic;
+		font-weight: inherit;
+	}
+	.page-break {
+		page-break-before: always;
+	}
+	p,
+	li {
+		page-break-inside: avoid;
+	}
+	p,
+	ul,
+	li,
+	dl,
+	dd {
+		margin: .5em 0;
+	}
+	dt {
+		position: absolute;
+	}
+	ul {
+		list-style-position: outside;
+		padding-left: 0;
+	}
+	dd,
+	main ul,
+	h2 ~ p,
+	h4 ~ p,
+	nav a::before {
+		margin-left: 7em;
+	}
+	main ul,
+	h2 ~ p,
+	h4 ~ p {
+		margin-right: 3.5em;
+	}
+	.timestamp {
+		position: absolute;
+		right: 0;
+	}
+	nav a::before {
+		content: attr(href);
+		display: block;
+		position: absolute;
+	}
+	svg {
+		height: .75em;
+		width: .75em;
+		margin-right: 1ex;
+	}
+}
+@media only screen {
+	.print {
+		display: none;
+	}
+	*,
+	*::before,
+	*::after {
+		box-sizing: inherit;
+	}
+	* {
+		color: inherit;
+		font-size: inherit;
+		font-style: inherit;
+		font-weight: inherit;
+		text-decoration: inherit;
+	}
+	html {
+		box-sizing: border-box;
+		background: #000;
+		color: #fff;
+		font: 16px/1.25 sans-serif;
+	}
+	body {
+		background: linear-gradient(0, rgba(186,218,85,.7), rgba(186,218,85,.7)),
+		            linear-gradient(180deg, rgba(0,0,0,.3) 0, #000 100vw),
+		            url(/photo.jpg) top / 100% auto no-repeat;
+		background-attachment: fixed;
+	}
+	.segment::before {
+		content: "";
+		position: absolute;
+		right: 0;
+		bottom: 100%;
+		left: 0;
+		border: 0 solid #000;
+		border-top-color: transparent;
+		border-width: 4em 50vw 0;
+	}
+	.segment {
+		position: relative;
+		z-index: 1;
+		background: #000;
+	}
+	main.segment:before {
+		border-color: transparent #fff #fff;
+	}
+	main.segment {
+		padding: 4em 1em 8em;
+		background: #fff;
+		color: #222;
+		font-family: serif;
+	}
+	section {
+		max-width: 35em;
+		margin: 0 auto;
+	}
+	main ul {
+		padding-left: 1em;
+	}
+	main li {
+		margin: .5em 0;
+	}
+	main a {
+		box-shadow: 0 -.25em rgba(186,218,85,.6) inset;
+		transition: border-width .1s ease;
+	}
+	main a:focus,
+	main a:hover {
+		border-bottom: 2px solid rgba(186,218,85,.6);
+	}
+	h1 {
+		margin: 0 0 2em;
+		font-size: 1.75em;
+		text-align: center;
+	}
+	h2 {
+		margin: 2.8em 0 1.5em;
+		font-size: 1.25em;
+		letter-spacing: .3ex;
+		line-height: 1;
+	}
+	b {
+		display: inline-block;
+		margin-left: -.3ex;
+		padding-left: .3ex;
+		background-color: #222;
+		color: #fff;
+		font-family: monospace;
+		text-transform: uppercase;
+	}
+	h3 {
+		margin: 2.25em 0 -.75em;
+		font-weight: 700;
+	}
+	h4 {
+		margin: 2.25em 0 .75em;
+	}
+	ul,
+	dl,
+	p {
+		margin: .75em 0 1.5em;
+	}
+	.company {
+		margin-left: -.3ex;
+		padding: 0 .3ex;
+		background-color: rgba(186,218,85,.3);
+	}
+	.timestamp {
+		float: right;
+		margin-left: 1ex;
+	}
+	.timestamp,
+	dt {
+		color: #9ea3ab;
+		font-family: sans-serif;
+		font-size: .875em;
+		line-height: 1.429;
+	}
+	dt {
+		margin: .25em 0 -.25em;
+	}
+	dd {
+		margin: .25em 0;
+	}
+	header {
+		padding: 16em 1em 19em;
+		color: #fff;
+		text-align: center;
+		text-shadow: 0 1px #000;
+	}
+	.fn {
+		margin: 0 0 .5em;
+		font-size: 2em;
+	}
+	.role {
+		font-size: 1.25em;
+	}
+	.adr {
+		font-size: .875em;
+		opacity: .75;
+	}
+	.country-name {
+		text-transform: uppercase;
+	}
+	.tel-area {
+		margin: 0 .5ex;
+	}
+	.photo {
+		overflow: hidden;
+		position: absolute;
+		top: 5em;
+		left: 50%;
+		height: 9.375em;
+		width: 9.375em;
+		margin-left: -4.6875em;
+		border: .25em solid #fff;
+		border-radius: 50%;
+		box-shadow: 0 1px #000;
+	}
+	.note {
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 18em;
+	}
+	nav.segment {
+		position: absolute;
+		z-index: 0;
+		top: 28em;
+		right: 0;
+		left: 0;
+		padding: 0 0 4em;
+	}
+	.bookmarks {
+		margin: 0;
+		text-align: center;
+	}
+	.bookmark {
+		display: inline-block;
+		position: relative;
+		width: 25%;
+		padding: 2px;
+	}
+	.bookmark:nth-child(4n - 3),
+	.bookmark:nth-child(4n) {
+		top: -2em;
+	}
+	.bookmark a {
+		display: block;
+		height: 5rem;
+		width: 5rem;
+		margin: 0 auto;
+		padding: .5em 0;
+		border-radius: 50%;
+		font-size: .875em;
+		transition: background-color .5s ease;
+	}
+	.bookmark svg {
+		overflow: visible;
+		display: block;
+		width: 2em;
+		height: 2em;
+		margin: .5em auto;
+	}
+	.bookmark path {
+		fill: #fff;
+	}
+	footer {
+		padding: 1.25em 1em .5em;
+		text-align: center;
+	}
+	footer a {
+		display: inline-block;
+		padding: .5em 1rem;
+		font-size: .875em;
+	}
+	.downloads a {
+		width: 8em;
+	}
+	.tweak {
+		opacity: .75;
+	}
+}
+@media only screen and (min-width: 28em) {
+	main.segment {
+		padding-right: 2em;
+		padding-left: 2em;
+	}
+	dt {
+		position: absolute;
+		width: 8em;
+		margin-top: 0;
+	}
+	dd {
+		margin-left: 8em;
+	}
+}
+@media only screen and (min-width: 37.5em) {
+	footer::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+	footer a {
+		display: inline-block;
+	}
+	.legal {
+		float: left;
+	}
+	.downloads {
+		float: right;
+	}
+	.downloads a {
+		width: auto;
+	}
+}
+@media only screen and (min-width: 48em) {
+	header {
+		padding-bottom: 14.5em;
+	}
+	.bookmark {
+		width: 12.5%;
+	}
+	.bookmark:nth-child(2),
+	.bookmark:nth-child(7) {
+		top: -1em;
+	}
+	.bookmark:nth-child(4),
+	.bookmark:nth-child(5) {
+		top: 1em;
+	}
+}
+@media only screen and (min-width: 60em) {
+	html {
+		font-size: 2vw;
+	}
+}
+@media only screen and (max-width: 19.9375em) {
+	html {
+		font-size: 5vw;
+	}
+}
