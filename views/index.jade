@@ -1,0 +1,39 @@
+doctype html
+html(lang="en", manifest=verbose ? null : "/offline.appcache")
+
+	head
+		meta(charset="utf-8")
+		title Matthias Beitl, @cssence
+		meta(name="description" content="Business Card and Résumé of web developer and CSS enthusiast Matthias Beitl.")
+		meta(name="viewport", content="width=device-width,initial-scale=1.0")
+		<!--[if !IE]><!-->
+		block stylesheets
+			if verbose
+				link(rel="stylesheet", href="/style.css")
+			else
+				style
+					include ../public/style.min.css
+			style(media="screen")
+				each bookmark in bookmarks
+					if bookmark.color
+						= "." + bookmark.id + ":focus,." + bookmark.id + ":hover{background-color:" + bookmark.color + "}"
+		link(rel="manifest", href="/manifest.json")
+		block icons
+			each icon in manifest.icons
+				link(rel="icon", type=icon.type, sizes=icon.sizes, href=icon.src)
+		<!--<![endif]-->
+		block alternate
+			each alternate in downloads
+				link(rel="alternate", type=alternate.type, href=alternate.href)
+		if verbose
+			script(src="/ctm.js")
+		else
+			script
+				include ../public/ctm.min.js
+
+	body
+		block content
+			include vcard
+			include cv
+			include bookmarks
+		include footer

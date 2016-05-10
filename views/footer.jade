@@ -1,8 +1,13 @@
-footer.segment.screen
-	h2.print Additional information
-	p.downloads
-		a(href=cv) Download Résumé
-		span.tweak  • 
-		a(href=vcf) Download vCard
-	p.legal.tweak
-		a(rel="license", href="https://github.com/cssence/matthias.beitl.net/blob/gh-pages/LICENSE", title="Licensed under the GNU General Public License (GPLv3)") © Copyleft 2016 Matthias Beitl
+footer.segment.screen#bottom
+	block downloads
+		section
+			h2.print Downloads
+			p.downloads
+				each download, index in downloads
+					if index
+						span.tweak  • 
+					a(href=download.src || download.href) Download #{download.title}
+	section
+		h2.print Imprint
+		p.legal.tweak
+			a(rel="license", href="https://github.com/cssence/matthias.beitl.net/blob/gh-pages/LICENSE", title="Licensed under the GNU General Public License (GPLv3)") © Copyleft 2016 Matthias Beitl

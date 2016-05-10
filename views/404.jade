@@ -1,16 +1,13 @@
-extends ./layout.jade
+extends ./index.jade
 
-append variables
-	- attr.role = "alert"
-	- attr.title = "Page not found"
-	
 block content
-	h1 404
-	p.note
-		| Nothing to be found here.
-		br
-		| How about you take a look at the 
-		a(href="/cv") résumé
-		|  or the 
-		a(href="/") contact card
-		|  instead.
+	main.segment#top
+		.note
+			h1
+				b Content not found
+			p
+				| We cannot find the content you requested. How about you visit the 
+				a(href="/") homepage
+				|  instead?
+
+block downloads

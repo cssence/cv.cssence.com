@@ -28,6 +28,17 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// minify js
+		uglify: {
+			scripts: {
+				expand: true,
+				cwd: "public/",
+				src: "*.js",
+				dest: "public/",
+				ext: ".min.js"
+			}
+		},
+
 		// jade compile
 		jade: {
 			compile: {
@@ -41,8 +52,8 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					"public/index.html": "views/vcard.jade",
-					"public/cv.html": "views/cv.jade",
+					"public/index.html": "views/index.jade",
+					"public/offline.html": "views/offline.jade",
 					"public/404.html": "views/404.jade"
 				}
 			}
@@ -62,13 +73,14 @@ module.exports = function (grunt) {
 	// Load the plugins
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-postcss");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-jade");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 
 	grunt.registerTask(
 		"build",
 		"Prepares project deployment (minification)",
-		["clean:generated", "postcss:styles"]
+		["clean:generated", "postcss:styles", "uglify:scripts"]
 	);
 	grunt.registerTask(
 		"release",
