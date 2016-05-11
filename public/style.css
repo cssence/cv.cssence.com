@@ -417,7 +417,8 @@ svg {
 		opacity: .75;
 	}
 	[role="alert"] {
-		position: absolute;
+		position: fixed;
+		z-index: 5;
 		top: 1em;
 		left: 50%;
 		width: 14em;

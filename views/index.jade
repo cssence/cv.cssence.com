@@ -26,8 +26,12 @@ html(lang="en", manifest=verbose ? null : "/offline.appcache")
 		block alternate
 			each alternate in downloads
 				link(rel="alternate", type=alternate.type, href=alternate.href)
-
+		if pages[path].noindex
+			meta(name="robots", content="noindex")
+	
 	body
+		if pages[path].noindex
+			section.screen(role="alert")!= pages[path].noindex
 		main
 			block content
 				include vcard

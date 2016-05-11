@@ -18,18 +18,13 @@ app.use(require("serve-static")(dir.public, {index: false}));
 app.set("views", dir.views);
 app.set("view engine", "jade");
 app.use(function (req, res) {
-	var map = {
-		"/": "index",
-		"/404": "404"
-	};
-	var status = req.method === "GET" ? 200 : 500;
-	var template = map[req.path];
-	if (status !== 200 || !template) {
-		status = 404;
-		template = map["/404"];
+	if (req.method !== "GET") {
+		res.status(501).json({ notImplemented: req.method });
+	} else {
+		var status = data.pages[req.path] ? 200 : 404;
+		data.path = status === 404 ? "/404" : req.path;
+		res.status(status).render("index", data);
 	}
-	data.path = req.path;
-	res.status(status).render(template, data);
 });
 
 // Http server

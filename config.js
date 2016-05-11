@@ -37,8 +37,15 @@ module.exports = function (environment) {
 			}
 		});
 	}
+	
+	var pages = {
+		"/": {},
+		"/offline": { noindex: "You are <i>offline</i>"},
+		"/404": { noindex: "<i>404</i> Page not found"}
+	};
 
 	return {
+		pages: pages,
 		downloads: downloads,
 		manifest: manifest,
 		bookmarks: bookmarks,
