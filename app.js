@@ -20,7 +20,6 @@ app.set("view engine", "jade");
 app.use(function (req, res) {
 	var map = {
 		"/": "index",
-		"/offline": "offline",
 		"/404": "404"
 	};
 	var status = req.method === "GET" ? 200 : 500;

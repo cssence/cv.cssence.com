@@ -1,16 +1,15 @@
 CACHE MANIFEST
-# 2016-05 v4.0.2
+# 2016-05 v4.0.4
 
 CACHE:
 /index.html
-/offline.html
 /photo.jpg
 /favicon-16.jpg
 /favicon-32.jpg
+/downloads/cv_matthias-beitl_2016-05.pdf
 
 NETWORK:
 *
 
 FALLBACK:
 / /index.html
-/downloads /offline.html

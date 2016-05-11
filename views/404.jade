@@ -1,20 +1,7 @@
 extends ./index.jade
 
-block description
-	title Not found
+append description
+	meta(name="robots", content="noindex")
 
-append stylesheets
-	style(media="screen")
-		| main.segment{min-height:calc(100vh - 14em);margin-top:9em}
-
-block content
-	main.segment#top
-		.note
-			h1
-				b Not found
-			p
-				| We cannot find the content you requested. How about you visit the 
-				a(href="/") homepage
-				|  instead?
-
-block downloads
+prepend content
+	section.screen(role="alert") #[i 404] Page Not Found

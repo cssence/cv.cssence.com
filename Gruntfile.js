@@ -53,7 +53,6 @@ module.exports = function (grunt) {
 				},
 				files: {
 					"public/index.html": "views/index.jade",
-					"public/offline.html": "views/offline.jade",
 					"public/404.html": "views/404.jade"
 				}
 			}

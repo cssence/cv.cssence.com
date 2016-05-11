@@ -62,7 +62,7 @@ img {
 		border-color: #bada55;
 		border-left-color: transparent;
 	}
-	h1.tag {
+	h1 {
 		margin: 0;
 		font-family: sans-serif;
 		font-size: 2em;
@@ -257,7 +257,6 @@ img {
 		font-size: 1.75em;
 		text-align: center;
 	}
-	.note h1,
 	h3 {
 		margin: 2.8em 0 1.5em;
 		font-size: 1.25em;
@@ -408,6 +407,25 @@ img {
 		display: inline-block;
 		min-width: 3em;
 		opacity: .75;
+	}
+	@keyframes fadeout { to { opacity: 0 } }
+	[role=alert] {
+		position: absolute;
+		top: 1em;
+		left: 50%;
+		width: 14em;
+		margin-left: -7em;
+		padding: .5em;
+		background: #222;
+		box-shadow: 0 .25em 1em rgba(0,0,0,.4);
+		color: #fff;
+		font-size: 75%;
+		text-align: center;
+		text-transform: uppercase;
+		animation: .4s ease 2s fadeout forwards;
+	}
+	[role=alert] i {
+		color: #894;
 	}
 }
 @media screen and (min-width: 28em) {
