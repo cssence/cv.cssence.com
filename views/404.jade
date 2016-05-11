@@ -1,10 +1,17 @@
 extends ./index.jade
 
+block description
+	title Not found
+
+append stylesheets
+	style(media="screen")
+		| main.segment{min-height:calc(100vh - 14em);margin-top:9em}
+
 block content
 	main.segment#top
 		.note
 			h1
-				b Content not found
+				b Not found
 			p
 				| We cannot find the content you requested. How about you visit the 
 				a(href="/") homepage

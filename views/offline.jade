@@ -1,7 +1,11 @@
 extends ./index.jade
 
+block description
+	title Not connected
+
 append stylesheets
 	style(media="screen")
+		| main.segment{min-height:calc(100vh - 14em);margin-top:9em}
 		| table{table-layout:fixed;width:100%;border-collapse:collapse}
 		| th{font-weight:700;text-align:left}
 		| th,td{padding:1em 1em 1em 0;border:0 solid #e0e0e0;border-bottom-width:1px}"

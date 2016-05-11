@@ -3,8 +3,9 @@ html(lang="en", manifest=verbose ? null : "/offline.appcache")
 
 	head
 		meta(charset="utf-8")
-		title Matthias Beitl, @cssence
-		meta(name="description" content="Business Card and Résumé of web developer and CSS enthusiast Matthias Beitl.")
+		block description
+			title Matthias Beitl, @cssence
+			meta(name="description" content="Business Card and Résumé of web developer and CSS enthusiast Matthias Beitl.")
 		meta(name="viewport", content="width=device-width,initial-scale=1.0")
 		<!--[if !IE]><!-->
 		block stylesheets

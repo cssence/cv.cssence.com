@@ -62,7 +62,7 @@ img {
 		border-color: #bada55;
 		border-left-color: transparent;
 	}
-	h1 {
+	h1.tag {
 		margin: 0;
 		font-family: sans-serif;
 		font-size: 2em;
