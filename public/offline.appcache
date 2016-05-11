@@ -2,6 +2,7 @@ CACHE MANIFEST
 # 2016-05 v4.0.5
 
 CACHE:
+/404.html
 /offline.html
 /photo.jpg
 /favicon-16.jpg
@@ -11,4 +12,5 @@ NETWORK:
 *
 
 FALLBACK:
-/ /offline.html
+/ /index.html
+/downloads/ /offline.html
