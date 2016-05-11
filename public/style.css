@@ -1,5 +1,5 @@
 main {
-	display: block; /*IE<11*/
+	display: block; /* IE10 */
 }
 body {
 	margin: 0;
@@ -167,7 +167,6 @@ img {
 	html {
 		box-sizing: border-box;
 		background: #000;
-		background-image: linear-gradient(rgba(186,218,85,.7) 0, #000 100vw);
 		color: #fff;
 		font: 16px/1.25 sans-serif;
 	}
@@ -182,8 +181,10 @@ img {
 		right: 0;
 		left: 0;
 		height: 100vw;
-		background: linear-gradient(rgba(186,218,85,.7) 0, #000 100vw), url(/photo.jpg) top no-repeat #000;
-		background-size: auto, 100vw auto;
+		background-image: linear-gradient(rgba(186,218,85,.7) 0, #000 100%), url(/photo.jpg);
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: auto, 100% auto;
 	}
 	header {
 		position: relative;
