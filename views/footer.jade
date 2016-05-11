@@ -1,12 +1,11 @@
 footer.segment.screen#bottom
-	block downloads
-		section
-			h2.print Downloads
-			p.downloads
-				each download, index in downloads
-					if index
-						span.tweak  • 
-					a(href=download.src || download.href) Download #{download.title}
+	section
+		h2.print Downloads
+		p.downloads
+			each download, index in downloads
+				if index
+					span.tweak  • 
+				a(href=download.src || download.href) Download #{download.title}
 	section
 		h2.print Imprint
 		p.legal.tweak

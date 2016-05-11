@@ -28,8 +28,9 @@ html(lang="en", manifest=verbose ? null : "/offline.appcache")
 				link(rel="alternate", type=alternate.type, href=alternate.href)
 
 	body
-		block content
-			include vcard
-			include cv
-			include bookmarks
+		main
+			block content
+				include vcard
+				include cv
+				include bookmarks
 		include footer
