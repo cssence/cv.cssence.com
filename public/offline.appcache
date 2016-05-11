@@ -13,4 +13,5 @@ NETWORK:
 
 FALLBACK:
 / /index.html
+/404 /404.html
 /downloads/ /offline.html
