@@ -25,11 +25,6 @@ html(lang="en", manifest=verbose ? null : "/offline.appcache")
 		block alternate
 			each alternate in downloads
 				link(rel="alternate", type=alternate.type, href=alternate.href)
-		if verbose
-			script(src="/ctm.js")
-		else
-			script
-				include ../public/ctm.min.js
 
 	body
 		block content

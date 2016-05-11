@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 		postcss: {
 			options: {
 				processors: [
-					require("autoprefixer")({ browsers: ["last 3 versions", "IE > 8"] }),
+					require("autoprefixer")({ browsers: ["last 3 versions", "IE > 9"] }),
 					require("cssnano")()
 				]
 			},
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		"build",
 		"Prepares project deployment (minification)",
-		["clean:generated", "postcss:styles", "uglify:scripts"]
+		["clean:generated", "postcss:styles"]
 	);
 	grunt.registerTask(
 		"release",

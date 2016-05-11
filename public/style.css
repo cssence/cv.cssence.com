@@ -125,14 +125,12 @@ img {
 	}
 	dd,
 	main ul,
-	h2 ~ p,
-	h4 ~ p,
+	main p,
 	nav a::before {
 		margin-left: 7em;
 	}
 	main ul,
-	h2 ~ p,
-	h4 ~ p {
+	main p {
 		margin-right: 3.5em;
 	}
 	.timestamp {
@@ -169,44 +167,61 @@ img {
 	html {
 		box-sizing: border-box;
 		background: #000;
+		background-image: linear-gradient(rgba(186,218,85,.7) 0, #000 100vw);
 		color: #fff;
 		font: 16px/1.25 sans-serif;
 	}
-	.v body {
+	body {
 		display: flex;
 		flex-direction: column;
 	}
-	body {
-		background: linear-gradient(0, rgba(186,218,85,.7), rgba(186,218,85,.7)),
-		            linear-gradient(180deg, rgba(0,0,0,.3) 0, #000 100vw),
-		            url(/photo.jpg) top / 100% auto no-repeat;
-		background-attachment: fixed;
+	body::before {
+		content: "";
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 100vw;
+		background: linear-gradient(rgba(186,218,85,.7) 0, #000 100vw), url(/photo.jpg) top no-repeat #000;
+		background-size: auto, 100vw auto;
 	}
-	.v header,
-	.v nav {
+	header {
+		position: relative;
+	}
+	header,
+	nav {
 		order: 0;
-		z-index: 0;
-	}
-	.v main,
-	.v footer {
-		order: 1;
 		z-index: 1;
 	}
-	.v .segment::before {
+	main,
+	footer {
+		order: 1;
+		z-index: 0;
+	}
+	.segment::before,
+	.segment::after {
 		content: "";
 		position: absolute;
+		z-index: -1;
 		right: 0;
-		bottom: 100%;
 		left: 0;
-		border: 0 solid #000;
-		border-top-color: transparent;
+		border: 0 solid transparent;
 		border-width: 4em 50vw 0;
+	}
+	.segment::before {
+		bottom: 100%;
+		border-color: transparent #000 #000;
+	}
+	.segment::after {
+		top: 100%;
+		border-top-color: #000;
 	}
 	.segment {
 		position: relative;
+		z-index: 0;
 		background: #000;
 	}
-	.v main.segment::before {
+	main.segment::before {
 		border-color: transparent #fff #fff;
 	}
 	main.segment {
@@ -214,6 +229,9 @@ img {
 		background: #fff;
 		color: #222;
 		font-family: serif;
+	}
+	footer.segment::after {
+		content: none;
 	}
 	section {
 		max-width: 35em;
@@ -329,7 +347,8 @@ img {
 		font-size: 87.5%;
 	}
 	nav.segment {
-		padding: 0 0 2.5em;
+		height: 9em;
+		margin-bottom: 4em;
 	}
 	.bookmarks {
 		margin: 0;
@@ -341,8 +360,8 @@ img {
 		width: 25%;
 		padding: 2px;
 	}
-	.v .bookmark:nth-child(4n - 3),
-	.v .bookmark:nth-child(4n) {
+	.bookmark:nth-child(4n - 3),
+	.bookmark:nth-child(4n) {
 		top: -2em;
 	}
 	.bookmark a {
@@ -368,8 +387,8 @@ img {
 	.bookmark path[fill] {
 		transition: fill .5s ease;
 	}
-	.bookmark:focus path[fill],
-	.bookmark:hover path[fill] {
+	.bookmark a:focus path[fill],
+	.bookmark a:hover path[fill] {
 		fill: rgba(255,255,255,.5);
 	}
 	footer {
@@ -404,38 +423,19 @@ img {
 		margin-left: 8em;
 	}
 }
-@media screen and (min-width: 37.5em) {
-	footer::after {
-		content: "";
-		clear: both;
-		display: table;
-	}
-	footer a {
-		display: inline-block;
-	}
-	.legal {
-		float: left;
-	}
-	.downloads {
-		float: right;
-	}
-	.downloads a {
-		width: auto;
-	}
-}
 @media screen and (min-width: 48em) {
 	nav.segment {
-		padding-bottom: 3em;
+		height: 4.5em;
 	}
 	.bookmark {
 		width: 12.5%;
 	}
-	.v .bookmark:nth-child(2),
-	.v .bookmark:nth-child(7) {
+	.bookmark:nth-child(2),
+	.bookmark:nth-child(7) {
 		top: -1em;
 	}
-	.v .bookmark:nth-child(4),
-	.v .bookmark:nth-child(5) {
+	.bookmark:nth-child(4),
+	.bookmark:nth-child(5) {
 		top: 1em;
 	}
 }
