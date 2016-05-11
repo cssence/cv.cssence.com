@@ -1,16 +1,8 @@
-extends ./layout.jade
-
-append variables
-	- attr.title = "Résumé"
-	- attr.description = "Résumé of Matthias Beitl, web developer and CSS enthusiast"
-	- attr.alternate = {type: "application/pdf", href: cv}
-
-block content
-	h1 Curriculum Vitae
-		span.print #[span.screen  of ]Matthias Beitl
+.segment#cv
+	h2 Curriculum Vitae
 
 	section
-		h2
+		h3
 			b Personal details
 		dl
 			dt Name
@@ -24,34 +16,34 @@ block content
 			dt Address
 			dd 3121 Karlstetten, Austria
 			dt Phone
-			dd.tel &#43;43#[span.tel-area 677]61147002
+			dd.tel &#43;43#[span.tel-area 677]61794478
 			if verbose
 				dt Skype
 				dd matthias.beitl
 
 	section
-		h2
+		h3
 			b Work experience
 		section
-			h3 December 2015 – Present
+			h4 December 2015 – Present
 			p
 				a.company(href="http://trinn.consulting/") TRINN&nbsp;Consulting&nbsp;GmbH
 				br
 				| 5 employees; in Vienna, Austria.
-			h4 #[i.timestamp ongoing] Consulting, Ideation & Development
+			h5 #[i.timestamp ongoing] Consulting, Ideation & Development
 			ul
 				li Consulting clients in technical aspects, focusing on digital innovation.
 				li Developing working prototypes for the company portfolio.
 				li Setting up services and infrastructure for events.
 				li Responsible for the company’s server and website. 
 		section
-			h3 December 2012 – November 2015
+			h4 December 2012 – November 2015
 			p
 				a.company(href="http://www.beeone.at/") BeeOne&nbsp;GmbH
 				| , a subsidiary of Erste&nbsp;Group,
 				br
 				| 30 employees; in Vienna, Austria.
-			h4 #[i.timestamp 2012-2015] Ideation, Research & Development
+			h5 #[i.timestamp 2012-2015] Ideation, Research & Development
 			ul
 				li Developing working prototypes to visualize new features, to be used either standalone or to be potentially incorporated into the most modern banking experience in the region.
 				li Coming up with innovative approaches for financial services and presenting them at the R&D team meetings of Erste&nbsp;Hub.
@@ -75,13 +67,13 @@ block content
 					a(href="http://www.mobeyforum.org/") MobeyForum
 					| .
 		section
-			h3 April 2006 – November 2012
+			h4 April 2006 – November 2012
 			p
 				a.company(href="http://www.s-itsolutions.at/") s&nbsp;IT Solutions AT Spardat&nbsp;GmbH
 				| ,
 				br
 				| 1,000+ employees; in Vienna, Austria.
-			h4 #[i.timestamp 2010–2012] Web Development
+			h5 #[i.timestamp 2010–2012] Web Development
 			ul
 				li Front-end web development for the Group Portal, a themed website used for many information portals, from 
 					a(href="http://www.sparkasse.at/") Austria
@@ -100,26 +92,26 @@ block content
 					a(href="http://en.wikipedia.org/wiki/Responsive_Web_Design") Responsive Web Design
 					| , and
 				li teaching web technologies at the company’s software engineering academy.
-			h4 #[i.timestamp 2008–2010] Software Development
+			h5 #[i.timestamp 2008–2010] Software Development
 			ul
 				li Developing software for loan applications, written in Java.
 				li Technically responsible (by proxy) for operational risk applications.
 				li Contributing to 
 					a(href="http://openxma.codehaus.org/") openXMA
 					| , the company’s web framework, released under the Eclipse Public License.
-			h4 #[i.timestamp 2006–2008] Business Analysis
+			h5 #[i.timestamp 2006–2008] Business Analysis
 			ul
 				li Designing solutions for statutory reporting applications to route data to the Austrian National Bank, in order to make way for 
 					a(href="http://en.wikipedia.org/wiki/XBRL") XBRL
 					| &#x2009;—&#x2009;an open specification to describe financial information.
 		section
-			h3 March 1997 – March 2006
+			h4.page-break March 1997 – March 2006
 			p
 				span.company Sparkassen Datendienst GmbH
 				| ,
 				br
 				| 500+ employees; in Vienna, Austria.
-			h4 #[i.timestamp 2003–2006] Web Development
+			h5 #[i.timestamp 2003–2006] Web Development
 			ul
 				li Developing a web content management framework for the 
 					a(href="http://www.sparkasse.at/") Austrian Savings Banks
@@ -132,16 +124,16 @@ block content
 				li Supervising the technical integration of the enterprise content management system “Documentum” by 
 					a(href="http://www.emc.com/") EMC²
 					| .
-			h4 #[i.timestamp 2001–2003] Product Ownership
+			h5 #[i.timestamp 2001–2003] Product Ownership
 			ul
-				li Responsible for the interbank clearing solution, processing domestic payments by a total of more than €1,000,000 per day.
-			h4 #[i.timestamp 1997–2001] Software Development
+				li Responsible for the interbank clearing solution, processing domestic payments by a total of more than €1bn per day.
+			h5 #[i.timestamp 1997–2001] Software Development
 			ul
 				li Developing software for domestic payment systems, written in Assembler and Cobol.
 				li Participating in major projects such as #[abbr Y2K] and the two-step Austrian Euro Conversion (book money and cash).
 
 	section
-		h2
+		h3
 			b Education
 			|  & 
 			b Certificates
@@ -156,14 +148,14 @@ block content
 			li #[i.timestamp 2011] IREB® Certified Professional for Requirements Engineering.
 
 	section
-		h2
+		h3
 			b Languages
 		ul
 			li German: native.
 			li English: fluent.
 
 	section
-		h2
+		h3.page-break
 			b Competences
 		ul
 			li Technical consulting, focusing on innovation.
@@ -172,9 +164,9 @@ block content
 			li Rapid prototyping.
 			li Web development according to web standards.
 	section
-		h2.page-break
+		h3
 			b Interests
-		p Passionate about state-of-the-art user interface design (web and native applications) as well as barrier-free web development.
+		p Passionate about barrier-free web development as well as state-of-the-art user interface design (web and native applications).
 		p Spare time interests include minimalism and 
 			a(href="http://en.wikipedia.org/wiki/Degrowth") degrowth
 			| , with some long distance running and reading on the side.

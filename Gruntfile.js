@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 		postcss: {
 			options: {
 				processors: [
-					require("autoprefixer")({ browsers: ["last 3 versions", "IE > 8"] }),
+					require("autoprefixer")({ browsers: ["last 3 versions", "IE > 9"] }),
 					require("cssnano")()
 				]
 			},
@@ -25,6 +25,17 @@ module.exports = function (grunt) {
 				src: "*.css",
 				dest: "public/",
 				ext: ".min.css"
+			}
+		},
+
+		// minify js
+		uglify: {
+			scripts: {
+				expand: true,
+				cwd: "public/",
+				src: "*.js",
+				dest: "public/",
+				ext: ".min.js"
 			}
 		},
 
@@ -41,9 +52,9 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					"public/index.html": "views/vcard.jade",
-					"public/cv.html": "views/cv.jade",
-					"public/404.html": "views/404.jade"
+					"public/index.html": "views/index.jade",
+					"public/offline.html": "views/index.jade",
+					"public/404.html": "views/index.jade"
 				}
 			}
 		},
@@ -62,6 +73,7 @@ module.exports = function (grunt) {
 	// Load the plugins
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-postcss");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-jade");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 
