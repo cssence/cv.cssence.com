@@ -10,7 +10,7 @@ module.exports = function (environment) {
 	assignIfNull(pkg.config, "port", 8080);
 	assignIfNull(pkg.config, "paths", {});
 	assignIfNull(pkg.config.paths, "views", path.join(__dirname, "views"));
-	assignIfNull(pkg.config.paths, "public", path.join(__dirname, "public"));
+	assignIfNull(pkg.config.paths, "public", path.join(__dirname, "docs"));
 
 	var manifest = require(path.join(pkg.config.paths.public, "manifest.json"));
 

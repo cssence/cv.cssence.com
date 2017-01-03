@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html(lang="en", manifest="/deleted")
 
 	head
 		meta(charset="utf-8")
@@ -13,7 +13,7 @@ html(lang="en")
 				link(rel="stylesheet", href="/style.css")
 			else
 				style
-					include ../public/style.min.css
+					include ../docs/style.min.css
 			style(media="screen")
 				each bookmark in bookmarks
 					if bookmark.color
