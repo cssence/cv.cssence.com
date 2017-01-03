@@ -1,17 +1,7 @@
-CACHE MANIFEST
-# 2017-01 v4.1
-
-CACHE:
-/404.html
-/offline.html
-/photo.jpg
-/favicon-16.jpg
-/favicon-32.jpg
+# bye bye Appcache :-P
 
 NETWORK:
 *
 
+CACHE:
 FALLBACK:
-/ /index.html
-/404 /404.html
-/downloads/ /offline.html
