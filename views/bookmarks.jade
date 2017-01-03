@@ -3,6 +3,7 @@ nav.segment#elsewhere
 	ul.bookmarks
 		each bookmark in bookmarks
 			- var siteUrl = bookmark.url.indexOf(pkg.homepage) === 0
+			- var tabindex = 0
 			li.bookmark
-				a(class=bookmark.id, tabindex=siteUrl ? "-1" : "1" , href=bookmark.url, rel=bookmark.rel)
+				a(class=bookmark.id, tabindex=siteUrl ? -1 : ++tabIndex , href=bookmark.url, rel=bookmark.rel)
 					!= bookmark.iconRaw + " " + bookmark.title
