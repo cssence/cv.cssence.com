@@ -1,6 +1,6 @@
 # matthias.beitl.net
 
-http://matthias.beitl.net/
+https://matthias.beitl.net/
 
 vCard and Résumé of Matthias Beitl
 
