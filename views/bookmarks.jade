@@ -1,8 +1,8 @@
 nav.segment#elsewhere
 	h2.print Links
-	ul.bookmarks
+	ul
 		each bookmark in bookmarks
 			- var siteUrl = bookmark.url.indexOf(pkg.homepage) === 0
-			li.bookmark
+			li
 				a(class=bookmark.id, href=bookmark.url, rel=bookmark.rel)
 					!= bookmark.iconRaw + " " + bookmark.title
