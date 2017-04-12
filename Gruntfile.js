@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 
 		// clean staging directory
 		clean: {
-			generated: ["docs/*.min.*", "docs/*.html"]
+			generated: ["public/*.min.*", "public/*.html"]
 		},
 
 		// prefix css
@@ -21,9 +21,9 @@ module.exports = function (grunt) {
 			},
 			styles: {
 				expand: true,
-				cwd: "docs/",
+				cwd: "public/",
 				src: "*.css",
-				dest: "docs/",
+				dest: "public/",
 				ext: ".min.css"
 			}
 		},
@@ -32,9 +32,9 @@ module.exports = function (grunt) {
 		uglify: {
 			scripts: {
 				expand: true,
-				cwd: "docs/",
+				cwd: "public/",
 				src: "*.js",
-				dest: "docs/",
+				dest: "public/",
 				ext: ".min.js"
 			}
 		},
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
 			compile: {
 				options: {
 					data: function (dest, src) {
-						data.path = dest.slice("docs".length, -".html".length);
+						data.path = dest.slice("public".length, -".html".length);
 						if (/\/index$/.test(data.path)) {
 							data.path = data.path.slice(0, -"index".length);
 						}
@@ -52,8 +52,8 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					"docs/index.html": "views/index.jade",
-					"docs/404.html": "views/index.jade"
+					"public/index.html": "views/index.jade",
+					"public/404.html": "views/index.jade"
 				}
 			}
 		},
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 		copy: {
 			assets: {
 				files: [
-					{expand: true, flatten: true, src: ["LICENSE"], dest: "docs/"}
+					{expand: true, flatten: true, src: ["LICENSE"], dest: "public/"}
 				]
 			}
 		}
