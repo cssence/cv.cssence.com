@@ -26,7 +26,7 @@ module.exports = function (environment) {
 	});
 
 	var downloads = [
-		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2016-05.pdf"},
+		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2017-01.pdf"},
 		{title: "vCard", type: "text/vcard", href: "/downloads/matthias-beitl.vcf"}
 	];
 	if (!verbose) {
@@ -40,7 +40,6 @@ module.exports = function (environment) {
 	
 	var pages = {
 		"/": {},
-		"/offline": { noindex: "You are <i>offline</i>"},
 		"/404": { noindex: "<i>404</i> Page not found"}
 	};
 
