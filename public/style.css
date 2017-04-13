@@ -86,6 +86,7 @@ blockquote p::before {
 		left: auto;
 		border-color: #bada55;
 		border-left-color: transparent;
+		border-right-width: 6em;
 	}
 	h1 {
 		margin: 0;
@@ -94,9 +95,15 @@ blockquote p::before {
 		line-height: 2;
 		text-align: center;
 	}
-	#cv h2,
-	dt,
-	nav a {
+	#cv::before {
+		content: url("qr.svg");
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: scale(.33);
+		transform-origin: top right;
+	}
+	#cv h2 {
 		 color: #bada55;
 	}
 	#cv h2 {
@@ -111,16 +118,15 @@ blockquote p::before {
 		float: left;
 		width: 6em;
 		height: 0;
-		margin: .9em 1em 0 0;
-		font-size: .667em;
+		margin: .6em 1em 0 0;
+		font-size: .8em;
 		border-top: 1mm solid #bada55;
 	}
 	h2.print,
 	h3 {
 		margin: 2em 0 1em;
-		font-family: monospace;
-		font-size: 1.5em;
-		font-weight: 700;
+		font-family: sans-serif;
+		font-size: 1.25em;
 	}
 	h4 {
 		margin: 2em 0 -.5em;
