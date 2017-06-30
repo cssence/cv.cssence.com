@@ -6,6 +6,13 @@
 main {
 	display: block; /* IE10 */
 }
+* {
+	color: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	text-decoration: inherit;
+}
 body {
 	margin: 0;
 }
@@ -19,6 +26,17 @@ img {
 svg {
 	overflow: visible;
 }
+blockquote {
+	margin-right: 5em;
+	margin-left: 0;
+	color: #bada55;
+}
+blockquote p::before {
+	content: "*";
+	position: absolute;
+	margin-left: -1.5ex;
+	font-size: 250%;
+}
 .tel-area {
 	margin: 0 .5ex;
 }
@@ -28,14 +46,14 @@ svg {
 		display: none;
 	}
 	* {
-		color: #000;
 		box-shadow: none !important;
-		text-decoration: none;
+		text-decoration: none !important;
 	}
 	@page {
 		margin: 20mm;
 	}
 	html {
+		color: #000;
 		font: 11pt/1.25 serif;
 	}
 	.photo {
@@ -68,6 +86,7 @@ svg {
 		left: auto;
 		border-color: #bada55;
 		border-left-color: transparent;
+		border-right-width: 6em;
 	}
 	h1 {
 		margin: 0;
@@ -76,9 +95,19 @@ svg {
 		line-height: 2;
 		text-align: center;
 	}
+	#cv::before {
+		content: url("qr.svg");
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: scale(.33);
+		transform-origin: top right;
+	}
+	#cv h2 {
+		 color: #bada55;
+	}
 	#cv h2 {
 		margin: -.5em 0 4em;
-		color: #bada55;
 		font-size: 1.5em;
 		font-style: italic;
 		text-align: center;
@@ -89,25 +118,22 @@ svg {
 		float: left;
 		width: 6em;
 		height: 0;
-		margin: .9em 1em 0 0;
-		font-size: .667em;
+		margin: .6em 1em 0 0;
+		font-size: .8em;
 		border-top: 1mm solid #bada55;
 	}
 	h2.print,
 	h3 {
 		margin: 2em 0 1em;
-		font-family: monospace;
-		font-size: 1.5em;
+		font-family: sans-serif;
+		font-size: 1.25em;
 	}
 	h4 {
 		margin: 2em 0 -.5em;
-		font-size: inherit;
 	}
 	h5 {
 		margin: 1em 0;
-		font-size: inherit;
 		font-style: italic;
-		font-weight: inherit;
 	}
 	.page-break {
 		page-break-before: always;
@@ -148,6 +174,7 @@ svg {
 		content: attr(href);
 		display: block;
 		position: absolute;
+		color: #000;
 	}
 	svg {
 		position: absolute;
@@ -164,13 +191,6 @@ svg {
 	*::before,
 	*::after {
 		box-sizing: inherit;
-	}
-	* {
-		color: inherit;
-		font-size: inherit;
-		font-style: inherit;
-		font-weight: inherit;
-		text-decoration: inherit;
 	}
 	html {
 		box-sizing: border-box;
@@ -245,6 +265,7 @@ svg {
 		max-width: 35em;
 		margin: 0 auto;
 	}
+	blockquote,
 	#cv ul {
 		padding-left: 1em;
 	}
@@ -357,21 +378,21 @@ svg {
 		height: 9em;
 		margin-bottom: 4em;
 	}
-	.bookmarks {
+	nav ul {
 		margin: 0;
 		text-align: center;
 	}
-	.bookmark {
+	nav li {
 		display: inline-block;
 		position: relative;
 		width: 25%;
 		padding: 2px;
 	}
-	.bookmark:nth-child(4n - 3),
-	.bookmark:nth-child(4n) {
+	nav li:nth-child(4n - 3),
+	nav li:nth-child(4n) {
 		top: -2em;
 	}
-	.bookmark a {
+	nav a {
 		display: block;
 		height: 5rem;
 		width: 5rem;
@@ -381,21 +402,21 @@ svg {
 		font-size: 87.5%;
 		transition: background-color .5s ease;
 	}
-	.bookmark svg {
+	nav svg {
 		overflow: visible;
 		display: block;
 		width: 2em;
 		height: 2em;
 		margin: .5em auto;
 	}
-	.bookmark path:not([fill]) {
+	nav path:not([fill]) {
 		fill: #fff;
 	}
-	.bookmark path[fill] {
+	nav path[fill] {
 		transition: fill .5s ease;
 	}
-	.bookmark a:focus path[fill],
-	.bookmark a:hover path[fill] {
+	nav a:focus path[fill],
+	nav a:hover path[fill] {
 		fill: rgba(255,255,255,.5);
 	}
 	footer {
@@ -453,15 +474,15 @@ svg {
 	nav.segment {
 		height: 4.5em;
 	}
-	.bookmark {
+	nav li {
 		width: 12.5%;
 	}
-	.bookmark:nth-child(2),
-	.bookmark:nth-child(7) {
+	nav li:nth-child(2),
+	nav li:nth-child(7) {
 		top: -1em;
 	}
-	.bookmark:nth-child(4),
-	.bookmark:nth-child(5) {
+	nav li:nth-child(4),
+	nav li:nth-child(5) {
 		top: 1em;
 	}
 }
