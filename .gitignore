@@ -1,4 +1,4 @@
 /node_modules/
 npm-debug.log
-*.min.*
-/wip/
+/public/*.min.*
+/public/*.html
