@@ -56,6 +56,13 @@ blockquote p::before {
 		color: #000;
 		font: 11pt/1.25 serif;
 	}
+	main::after {
+		/* http://chart.apis.google.com/chart?chs=80x80&cht=qr&chl=https%3A%2F%2Fmatthias.beitl.net%2F */
+		content: url("qr.png");
+		position: absolute;
+		top: 1em;
+		right: 1em;
+	}
 	.photo {
 		display: block;
 		overflow: hidden;
@@ -94,14 +101,6 @@ blockquote p::before {
 		font-size: 2em;
 		line-height: 2;
 		text-align: center;
-	}
-	#cv::before {
-		content: url("qr.svg");
-		position: absolute;
-		top: 0;
-		right: 0;
-		transform: scale(.33);
-		transform-origin: top right;
 	}
 	#cv h2 {
 		 color: #bada55;
