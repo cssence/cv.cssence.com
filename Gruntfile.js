@@ -39,8 +39,8 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// jade compile
-		jade: {
+		// pug compile
+		pug: {
 			compile: {
 				options: {
 					data: function (dest, src) {
@@ -52,8 +52,8 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					"public/index.html": "views/index.jade",
-					"public/404.html": "views/index.jade"
+					"public/index.html": "views/index.pug",
+					"public/404.html": "views/index.pug"
 				}
 			}
 		}
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-postcss");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-jade");
+	grunt.loadNpmTasks("grunt-contrib-pug");
 
 	grunt.registerTask(
 		"build",
@@ -74,7 +74,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		"release",
 		"Deploys the project (copy assets and generate HTML)",
-		["build", "jade:compile"]
+		["build", "pug:compile"]
 	);
 
 	// Default task(s).

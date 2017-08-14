@@ -1,4 +1,4 @@
-module.exports = function (environment) {
+module.exports = function () {
 	"use strict";
 	var path = require("path");
 	var fs = require("fs");
