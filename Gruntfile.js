@@ -53,6 +53,7 @@ module.exports = function (grunt) {
 				},
 				files: {
 					"public/index.html": "views/index.pug",
+					"public/offline.html": "views/index.pug",
 					"public/404.html": "views/index.pug"
 				}
 			}

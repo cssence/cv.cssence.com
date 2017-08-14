@@ -30,7 +30,8 @@ module.exports = function () {
 	
 	var pages = {
 		"/": {},
-		"/404": { noindex: "<i>404</i> Page not found"}
+		"/offline": {noindex: "You are <i>offline</i>"},
+		"/404": {noindex: "<i>404</i> Page not found"}
 	};
 
 	return {
