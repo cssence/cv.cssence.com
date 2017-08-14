@@ -1,10 +1,13 @@
 {
 	"lang": "en",
-	"name": "@cssence",
+	"name": "matthias.beitl.net",
+	"short_name": "@cssence",
 	"icons": [
-		{"type": "image/jpeg", "src": "/photo.jpg", "sizes": "300x300"},
-		{"type": "image/jpeg", "src": "/favicon-32.jpg", "sizes": "32x32"},
-		{"type": "image/jpeg", "src": "/favicon-16.jpg", "sizes": "16x16"}
+		{
+			"src": "/photo.jpg",
+			"type": "image/jpeg",
+			"sizes": "300x300"
+		}
 	],
 	"start_url": "/",
 	"display": "browser",
