@@ -56,15 +56,6 @@ module.exports = function (grunt) {
 					"public/404.html": "views/index.jade"
 				}
 			}
-		},
-
-		// copy assets that are to-be-hosted
-		copy: {
-			assets: {
-				files: [
-					{expand: true, flatten: true, src: ["LICENSE"], dest: "public/"}
-				]
-			}
 		}
 
 	});
@@ -74,7 +65,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-postcss");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-jade");
-	grunt.loadNpmTasks("grunt-contrib-copy");
 
 	grunt.registerTask(
 		"build",
@@ -84,7 +74,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		"release",
 		"Deploys the project (copy assets and generate HTML)",
-		["build", "jade:compile", "copy:assets"]
+		["build", "jade:compile"]
 	);
 
 	// Default task(s).
