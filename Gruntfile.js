@@ -2,7 +2,7 @@ module.exports = function (grunt) {
 	"use strict";
 	grunt.file.defaultEncoding = "utf8";
 
-	var data = require("./config.js")("grunt");
+	var data = require("./config.js")();
 
 	grunt.initConfig({
 
