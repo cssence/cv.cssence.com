@@ -9,8 +9,7 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width,initial-scale=1.0")
 		<!--[if !IE]><!-->
 		block stylesheets
-			style
-				include ../public/style.min.css
+			link(rel="stylesheet", href="/style.min.css")
 			style(media="screen")
 				each bookmark in bookmarks
 					if bookmark.color
@@ -35,3 +34,5 @@ html(lang="en")
 				include cv
 				include bookmarks
 		include footer
+		script
+			| if(navigator.serviceWorker){navigator.serviceWorker.register("/sw.js")}
