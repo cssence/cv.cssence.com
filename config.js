@@ -24,7 +24,7 @@ module.exports = function () {
 	downloads.forEach(function (download) {
 		if (download.type === "text/vcard") {
 			var content = fs.readFileSync(path.join(__dirname, "public", download.href));
-			download.src = "data:text/vcard;charset=utf-8;base64," + new Buffer(content).toString("base64");
+			download.src = "data:text/vcard;charset=utf-8," + encodeURIComponent(new Buffer(content).toString());
 		}
 	});
 	
