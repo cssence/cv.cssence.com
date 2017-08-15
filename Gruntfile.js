@@ -70,7 +70,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		"build",
 		"Prepares project deployment (minification)",
-		["clean:generated", "postcss:styles", "uglify:scripts"]
+		["clean:generated", "postcss:styles"]
 	);
 	grunt.registerTask(
 		"release",

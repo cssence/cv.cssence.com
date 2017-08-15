@@ -7,36 +7,34 @@
 * https://mxb.at/blog/how-to-turn-your-website-into-a-pwa/
 */
 
+/*jshint esversion: 6 */
+
 (function() {
 	"use strict";
 
-	var cacheName = "assets";
-	var cacheVersion = "v1";
+	const cacheName = "assets";
+	const cacheVersion = "v1";
 
-	self.addEventListener("install", function (event) {
+	self.addEventListener("install", event => {
 		event.waitUntil(
 			caches.open([cacheName, cacheVersion].join("-"))
-				.then(function (cache) {
-					cache.addAll([
-						"/index.html",
-						"/offline.html",
-						"/style.min.css",
-						"/photo.jpg"
-					]);
-				})
+				.then(cache => cache.addAll([
+					"/index.html",
+					"/offline.html",
+					"/style.min.css",
+					"/photo.jpg"
+				]))
 		);
 	});
 
-	self.addEventListener("fetch", function (event) {
-		var request = event.request;
+	self.addEventListener("fetch", event => {
+		const request = event.request;
 		event.respondWith(
 			caches.match(request)
-				.then(function (response) {
-					response = response || fetch(request).catch(function () {
+				.then(response => response || fetch(request).catch(() => {
 						return caches.match("/offline.html");
-					});
-					return response;
-				})
+					})
+				)
 		);
 	});
 
