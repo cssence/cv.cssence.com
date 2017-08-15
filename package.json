@@ -1,26 +1,24 @@
 {
-  "name": "resume",
+  "name": "@cssence/resume",
   "homepage": "https://matthias.beitl.net/",
-  "version": "4.0.5",
+  "version": "5.0.0",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/cssence/matthias.beitl.net.git"
   },
   "scripts": {
-    "start": "node app.js"
+    "build": "grunt"
   },
-  "devDependencies": {
-    "autoprefixer": "^6.1.2",
-    "cssnano": "^3.3.2",
-    "express": "^4.13.3",
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "cssnano": "^3.10.0",
     "grunt": "^0.4.5",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^0.7.0",
-    "grunt-contrib-copy": "^0.8.2",
-    "grunt-contrib-jade": "^0.15.0",
-    "grunt-contrib-uglify": "^1.0.0",
-    "grunt-postcss": "^0.7.1",
-    "jade": "^1.11.0",
-    "serve-static": "^1.10.0"
+    "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.2",
+    "grunt-postcss": "^0.7.2",
+    "pug": "^2.0.0-rc.3"
   }
 }

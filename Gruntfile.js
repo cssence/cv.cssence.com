@@ -2,7 +2,7 @@ module.exports = function (grunt) {
 	"use strict";
 	grunt.file.defaultEncoding = "utf8";
 
-	var data = require("./config.js")("grunt");
+	var data = require("./config.js")();
 
 	grunt.initConfig({
 
@@ -33,14 +33,14 @@ module.exports = function (grunt) {
 			scripts: {
 				expand: true,
 				cwd: "public/",
-				src: "*.js",
+				src: "start.js",
 				dest: "public/",
 				ext: ".min.js"
 			}
 		},
 
-		// jade compile
-		jade: {
+		// pug compile
+		pug: {
 			compile: {
 				options: {
 					data: function (dest, src) {
@@ -52,18 +52,9 @@ module.exports = function (grunt) {
 					}
 				},
 				files: {
-					"public/index.html": "views/index.jade",
-					"public/404.html": "views/index.jade"
+					"public/index.html": "views/index.pug",
+					"public/404.html": "views/index.pug"
 				}
-			}
-		},
-
-		// copy assets that are to-be-hosted
-		copy: {
-			assets: {
-				files: [
-					{expand: true, flatten: true, src: ["LICENSE"], dest: "public/"}
-				]
 			}
 		}
 
@@ -73,18 +64,17 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-postcss");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-jade");
-	grunt.loadNpmTasks("grunt-contrib-copy");
+	grunt.loadNpmTasks("grunt-contrib-pug");
 
 	grunt.registerTask(
 		"build",
 		"Prepares project deployment (minification)",
-		["clean:generated", "postcss:styles"]
+		["clean:generated", "postcss:styles", "uglify:scripts"]
 	);
 	grunt.registerTask(
 		"release",
 		"Deploys the project (copy assets and generate HTML)",
-		["build", "jade:compile", "copy:assets"]
+		["build", "pug:compile"]
 	);
 
 	// Default task(s).
