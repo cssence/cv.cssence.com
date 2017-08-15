@@ -1,6 +1,9 @@
-@keyframes fadeout {
-	to {
+@keyframes fadeinout {
+	0%, 100% {
 		opacity: 0;
+	}
+	20%, 80% {
+		opacity: 1;
 	}
 }
 main {
@@ -449,7 +452,7 @@ blockquote p::before {
 		font-size: 75%;
 		text-align: center;
 		text-transform: uppercase;
-		animation: .4s ease 2s fadeout forwards;
+		animation: 3s ease fadeinout forwards;
 	}
 	[role="alert"] i {
 		color: #bada55;

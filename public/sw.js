@@ -20,8 +20,6 @@
 			caches.open([cacheName, cacheVersion].join("-"))
 				.then(cache => cache.addAll([
 					"/index.html",
-					"/offline.html",
-					"/style.min.css",
 					"/photo.jpg"
 				]))
 		);
@@ -32,7 +30,7 @@
 		event.respondWith(
 			caches.match(request)
 				.then(response => response || fetch(request).catch(() => {
-						return caches.match("/offline.html");
+						return caches.match("/index.html");
 					})
 				)
 		);

@@ -33,7 +33,7 @@ module.exports = function (grunt) {
 			scripts: {
 				expand: true,
 				cwd: "public/",
-				src: "*.js",
+				src: "start.js",
 				dest: "public/",
 				ext: ".min.js"
 			}
@@ -53,7 +53,6 @@ module.exports = function (grunt) {
 				},
 				files: {
 					"public/index.html": "views/index.pug",
-					"public/offline.html": "views/index.pug",
 					"public/404.html": "views/index.pug"
 				}
 			}
@@ -70,7 +69,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		"build",
 		"Prepares project deployment (minification)",
-		["clean:generated", "postcss:styles"]
+		["clean:generated", "postcss:styles", "uglify:scripts"]
 	);
 	grunt.registerTask(
 		"release",
