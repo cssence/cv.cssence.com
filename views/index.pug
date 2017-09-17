@@ -16,6 +16,7 @@ html(lang="en")
 					if bookmark.color
 						= "." + bookmark.id + ":focus,." + bookmark.id + ":hover{background-color:" + bookmark.color + "}"
 		link(rel="manifest", href="/manifest.json")
+		meta(name="theme-color", content="#bada55")
 		block icons
 			each icon in manifest.icons
 				link(rel="icon", type=icon.type, sizes=icon.sizes, href=icon.src)
