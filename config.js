@@ -18,7 +18,7 @@ module.exports = function () {
 	});
 
 	var downloads = [
-		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2017-08.pdf"},
+		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2017-10.pdf"},
 		{title: "vCard", type: "text/vcard", href: "/downloads/matthias-beitl.vcf"}
 	];
 	downloads.forEach(function (download) {

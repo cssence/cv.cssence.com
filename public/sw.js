@@ -1,39 +1,40 @@
 /**
 * Service Worker for https://matthias.beitl.net/
 *
-* Shoutout to @adactio, @jaffathecake and @mxbck, as this is based on
+* Shoutout to @adactio, @jaffathecake and @mxbck, as this was based on
 * https://gist.github.com/adactio/fbaa3a5952774553f5e7,
 * https://www.youtube.com/watch?v=qDJAz3IIq18 and
 * https://mxb.at/blog/how-to-turn-your-website-into-a-pwa/
+*
+* The latest update however is based on
+* https://serviceworke.rs/strategy-cache-and-update_service-worker_doc.html
 */
 
 /*jshint esversion: 6 */
 
-(function() {
-	"use strict";
+const CACHE = "page";
 
-	const cacheName = "assets";
-	const cacheVersion = "v1";
+self.addEventListener("install", event => {
+	event.waitUntil(precache());
+});
 
-	self.addEventListener("install", event => {
-		event.waitUntil(
-			caches.open([cacheName, cacheVersion].join("-"))
-				.then(cache => cache.addAll([
-					"/index.html",
-					"/photo.jpg"
-				]))
-		);
-	});
+self.addEventListener("fetch", event => {
+	event.respondWith(fromCache(event.request).catch(() => fromCache("./")));
+	event.waitUntil(update(event.request));
+});
 
-	self.addEventListener("fetch", event => {
-		const request = event.request;
-		event.respondWith(
-			caches.match(request)
-				.then(response => response || fetch(request).catch(() => {
-						return caches.match("/index.html");
-					})
-				)
-		);
-	});
+function precache() {
+	return caches.open(CACHE).then(cache => cache.addAll([
+			"./",
+			"./photo.jpg"
+		])
+	);
+}
 
-})();
+function fromCache(request) {
+	return caches.open(CACHE).then(cache => cache.match(request).then(match => match || Promise.reject("no-match")));
+}
+
+function update(request) {
+	return caches.open(CACHE).then(cache => fetch(request).then(response => cache.put(request, response)));
+}
