@@ -1,10 +1,10 @@
 [
 	{"url": "https://cssence.com/", "title": "Website", "color": "#d34b6c", "icon": "https://matthias.beitl.net/icon-cssence.svg"},
-	{"url": "https://twitter.com/cssence", "title": "Twitter", "color": "#4099ff", "icon": "https://matthias.beitl.net/icon-twitter.svg"},
+	{"url": "https://twitter.com/cssence", "title": "Twitter", "color": "#1da1f2", "icon": "https://matthias.beitl.net/icon-twitter.svg"},
 	{"url": "https://github.com/cssence", "title": "GitHub", "color": "#444", "icon": "https://matthias.beitl.net/icon-github.svg"},
-	{"url": "https://codepen.io/cssence/", "title": "CodePen", "color": "#252527", "icon": "https://matthias.beitl.net/icon-codepen.svg"},
-	{"url": "https://medium.com/@cssence", "title": "Medium", "color": "#02b875", "icon": "https://matthias.beitl.net/icon-medium.svg"},
-	{"url": "https://www.xing.com/profile/Matthias_Beitl", "title": "Xing", "color": "#006464", "icon": "https://matthias.beitl.net/icon-xing.svg"},
-	{"url": "https://at.linkedin.com/in/matthiasbeitl", "title": "Linkedin", "color": "#007bb6", "icon": "https://matthias.beitl.net/icon-linkedin.svg"},
+	{"url": "https://codepen.io/cssence/", "title": "CodePen", "color": "#444", "icon": "https://matthias.beitl.net/icon-codepen.svg"},
+	{"url": "https://medium.com/@cssence", "title": "Medium", "color": "#444", "icon": "https://matthias.beitl.net/icon-medium.svg"},
+	{"url": "https://www.xing.com/profile/Matthias_Beitl", "title": "Xing", "color": "#005a5f", "icon": "https://matthias.beitl.net/icon-xing.svg"},
+	{"url": "https://at.linkedin.com/in/matthiasbeitl", "title": "Linkedin", "color": "#0077b5", "icon": "https://matthias.beitl.net/icon-linkedin.svg"},
 	{"url": "https://matthias.beitl.net/", "title": "Résumé", "color": "#bada55", "icon": "https://matthias.beitl.net/icon-profile.svg"}
 ]
