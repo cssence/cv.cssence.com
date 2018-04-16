@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
 
-	head
+	head(id="🆗")
 		meta(charset="utf-8")
 		block description
 			title Matthias Beitl, @cssence
@@ -35,6 +35,8 @@ html(lang="en")
 				include vcard
 				include cv
 				include bookmarks
+		if !pages[path].noindex
+			include referral
 		include footer
 		script
 			include ../public/start.min.js

@@ -194,6 +194,10 @@ blockquote p::before {
 	*::after {
 		box-sizing: inherit;
 	}
+	*:focus {
+		outline: none;
+		box-shadow: 0 0 0 3px rgba(33,33,33,.5) !important;
+	}
 	html {
 		box-sizing: border-box;
 		background: #000;
@@ -278,7 +282,6 @@ blockquote p::before {
 		box-shadow: 0 -.25em rgba(186,218,85,.6) inset;
 		transition: border-width .1s ease;
 	}
-	#cv a:focus,
 	#cv a:hover {
 		border-bottom: 2px solid rgba(186,218,85,.6);
 	}
@@ -437,6 +440,59 @@ blockquote p::before {
 		display: inline-block;
 		min-width: 3em;
 		opacity: .75;
+	}
+	[role="dialog"] {
+		display: none;
+		position: fixed;
+		z-index: 4;
+		top: 0;
+		right: 0;
+		min-height: 100vh;
+		left: 0;
+		padding: 4em 1em;
+		background: rgba(0,0,0,.8);
+		text-align: left;
+		transition: opacity .75s ease, transform 0s linear .75s, visibility 0s linear .75s;
+	}
+	[role="dialog"]:target {
+		display: block;
+		opacity: 1;
+		transform: translateY(0);
+		transition: opacity .75s ease, transform 0s linear, visibility 0s linear;
+		visibility: visible;
+	}
+	#🆗:target + body [role="dialog"] {
+		display: block;
+		opacity: 0;
+		transform: translateY(-100%);
+		visibility: hidden;
+	}
+	#🆗:target + body [role="dialog"] section {
+		transform: translateY(-3em);
+	}
+	[role="dialog"] section {
+		max-width: 22.5em;
+		padding: 1.75em 1.5em .5em;
+		background: #fff;
+		box-shadow: 0 .25em 1em rgba(0,0,0,.5);
+		color: #222;
+		opacity: 1;
+		transform: translateY(0);
+		transition: transform .75s ease;
+	}
+	[role="dialog"] h2 {
+		color: #9ea3ab;
+		font-size: 75%;
+		text-align: left;
+		text-transform: uppercase;
+	}
+	[role="dialog"] a {
+		display: block;
+		width: max-content;
+		margin: 0 auto;
+		padding: .5em 1.5em;
+		border-radius: 1.5em;
+		background: #bada55;
 	}
 	[role="alert"] {
 		position: fixed;
