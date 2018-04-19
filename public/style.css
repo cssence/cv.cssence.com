@@ -318,8 +318,9 @@ svg {
 	p {
 		margin: .75em 0 1.5em;
 	}
-	em,
+	.highlight,
 	.company {
+		margin-right: -.3ex;
 		margin-left: -.3ex;
 		padding: 0 .3ex;
 		background-color: rgba(186,218,85,.3);
