@@ -318,6 +318,7 @@ svg {
 	p {
 		margin: .75em 0 1.5em;
 	}
+	em,
 	.company {
 		margin-left: -.3ex;
 		padding: 0 .3ex;
