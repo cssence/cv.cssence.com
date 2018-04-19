@@ -12,7 +12,7 @@
 			if (msg) {
 				msg.remove();
 			}
-			msg = document.createElement("section");
+			msg = document.createElement("div");
 			msg.setAttribute("class", "screen");
 			msg.setAttribute("role", "alert");
 			msg.textContent = "You are ";

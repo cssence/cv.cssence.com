@@ -29,12 +29,14 @@ html(lang="en")
 
 	body
 		if pages[path].noindex
-			section.screen(role="alert")!= pages[path].noindex
+			div.screen(role="alert")!= pages[path].noindex
 		main
 			block content
 				include vcard
 				include cv
 				include bookmarks
+		if !pages[path].noindex
+			include referral
 		include footer
 		script
 			include ../public/start.min.js
