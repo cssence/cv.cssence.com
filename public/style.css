@@ -270,7 +270,7 @@ svg {
 	footer.segment::after {
 		content: none;
 	}
-	section {
+	.container {
 		max-width: 35em;
 		margin: 0 auto;
 	}
@@ -305,7 +305,6 @@ svg {
 		background-color: #222;
 		color: #fff;
 		font-family: monospace;
-		text-transform: uppercase;
 	}
 	h4 {
 		margin: 2.25em 0 -.75em;
@@ -463,10 +462,10 @@ svg {
 		transition: opacity .75s ease, transform 0s linear, visibility 0s linear;
 		visibility: visible;
 	}
-	[role="dialog"]:target section {
+	[role="dialog"]:target .container {
 		transform: translateY(0);
 	}
-	[role="dialog"] section {
+	[role="dialog"] .container {
 		max-width: 25em;
 		padding: 1.75em 1.5em .5em;
 		background: #fff;
