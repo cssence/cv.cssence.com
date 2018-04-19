@@ -1,3 +1,8 @@
+:root {
+	--p-text: #000;
+	--p-text-subtle: #676767;
+	--p-ornamental: #000;
+}
 @keyframes fadeinout {
 	0%, 100% {
 		opacity: 0;
@@ -29,17 +34,6 @@ img {
 svg {
 	overflow: visible;
 }
-blockquote {
-	margin-right: 5em;
-	margin-left: 0;
-	color: #bada55;
-}
-blockquote p::before {
-	content: "*";
-	position: absolute;
-	margin-left: -1.5ex;
-	font-size: 250%;
-}
 .tel-area {
 	margin: 0 .5ex;
 }
@@ -56,7 +50,7 @@ blockquote p::before {
 		margin: 20mm;
 	}
 	html {
-		color: #000;
+		color: var(--p-text);
 		font: 11pt/1.25 serif;
 	}
 	main::after {
@@ -89,12 +83,12 @@ blockquote p::before {
 		width: 0;
 		border: 1.5em solid transparent;
 		border-width: 3em 4em 3em 2em;
-		border-left-color: #000;
+		border-left-color: var(--p-ornamental);
 	}
 	.vcard::after {
 		right: 0;
 		left: auto;
-		border-color: #bada55;
+		border-color: var(--p-ornamental);
 		border-left-color: transparent;
 		border-right-width: 6em;
 	}
@@ -105,8 +99,9 @@ blockquote p::before {
 		line-height: 2;
 		text-align: center;
 	}
-	#cv h2 {
-		 color: #bada55;
+	#cv h2,
+	[data-expand]::after {
+		 color: var(--p-text-subtle);
 	}
 	#cv h2 {
 		margin: -.5em 0 4em;
@@ -122,7 +117,7 @@ blockquote p::before {
 		height: 0;
 		margin: .6em 1em 0 0;
 		font-size: .8em;
-		border-top: 1mm solid #bada55;
+		border-top: 3pt dotted var(--p-ornamental);
 	}
 	h2.print,
 	h3 {
@@ -156,13 +151,15 @@ blockquote p::before {
 	}
 	ul {
 		list-style-position: outside;
+		list-style-type: circle;
 		padding-left: 0;
 	}
 	dd,
 	#cv ul,
 	#cv p,
-	nav a::before {
-		margin-left: 7em;
+	nav a::before,
+	[data-expand]::after {
+		margin-left: 7rem;
 	}
 	#cv ul,
 	#cv p {
@@ -176,13 +173,19 @@ blockquote p::before {
 		content: attr(href);
 		display: block;
 		position: absolute;
-		color: #000;
 	}
 	svg {
 		position: absolute;
 		right: 0;
 		height: 1em;
 		width: 1em;
+	}
+	[data-expand]::after {
+		content: attr(data-expand);
+		display: block;
+		margin-top: 3em;
+		font-family: sans-serif;
+		font-size: 9pt;
 	}
 }
 @media screen {
@@ -215,7 +218,7 @@ blockquote p::before {
 		right: 0;
 		left: 0;
 		height: 100vw;
-		background-image: linear-gradient(rgba(186,218,85,.7) 0, #000 100%), url(/photo.jpg);
+		background-image: linear-gradient(rgba(186,218,85,.7) 0, var(--p-ornamental) 100%), url(/photo.jpg);
 		background-position: top center;
 		background-repeat: no-repeat;
 		background-size: auto, 100% auto;
@@ -271,7 +274,6 @@ blockquote p::before {
 		max-width: 35em;
 		margin: 0 auto;
 	}
-	blockquote,
 	#cv ul {
 		padding-left: 1em;
 	}
