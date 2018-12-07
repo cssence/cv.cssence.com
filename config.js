@@ -14,11 +14,13 @@ module.exports = function () {
 			bookmark.rel = "home";
 		} else if (bookmark.icon.indexOf("cssence") !== -1) {
 			bookmark.rel = "me";
+		} else if (bookmark.url.indexOf("xing") !== -1) {
+			bookmark.className = "screen";
 		}
 	});
 
 	var downloads = [
-		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2018-04.pdf"},
+		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2018-12.pdf"},
 		{title: "vCard", type: "text/vcard", href: "/downloads/matthias-beitl.vcf"}
 	];
 	downloads.forEach(function (download) {
