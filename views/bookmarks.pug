@@ -2,7 +2,7 @@ nav.segment#elsewhere
 	h2.print Links
 	ul
 		each bookmark in bookmarks
-			- var siteUrl = bookmark.url.indexOf(homepage) === 0
+			- var classNames = [bookmark.id].concat((bookmark.className || "").split(" ")).join(" ")
 			li
-				a(class=bookmark.id, href=bookmark.url, rel=bookmark.rel)
+				a(class=classNames, href=bookmark.url, rel=bookmark.rel)
 					!= bookmark.iconRaw + " " + bookmark.title
