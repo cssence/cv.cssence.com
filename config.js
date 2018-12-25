@@ -12,10 +12,9 @@ module.exports = function () {
 		bookmark.iconRaw = fs.readFileSync(path.join(__dirname, "public", bookmark.icon.split(pkg.homepage)[1]), "utf8");
 		if (bookmark.url === pkg.homepage) {
 			bookmark.rel = "home";
+			bookmark.className = "print";
 		} else if (bookmark.icon.indexOf("cssence") !== -1) {
 			bookmark.rel = "me";
-		} else if (bookmark.url.indexOf("xing") !== -1) {
-			bookmark.className = "screen";
 		}
 	});
 

@@ -387,18 +387,18 @@ svg {
 		margin-bottom: 4em;
 	}
 	nav ul {
-		margin: 0;
+		margin: 0 .5em;
 		text-align: center;
 	}
 	nav li {
 		display: inline-block;
 		position: relative;
-		width: 25%;
+		top: -1.25em;
+		width: calc(100% / 3);
 		padding: 2px;
 	}
-	nav li:nth-child(4n - 3),
-	nav li:nth-child(4n) {
-		top: -2em;
+	nav li:nth-child(3n + 2) {
+		top: 1em;
 	}
 	nav a {
 		display: block;
@@ -529,15 +529,16 @@ svg {
 	nav.segment {
 		height: 4.5em;
 	}
-	nav li {
-		width: 12.5%;
+	nav li:nth-child(1n) {
+		width: calc(100% / 6);
+		top: -.25em;
 	}
-	nav li:nth-child(2),
-	nav li:nth-child(7) {
-		top: -1em;
+	nav li:nth-child(1),
+	nav li:nth-child(6) {
+		top: -1.5em;
 	}
-	nav li:nth-child(4),
-	nav li:nth-child(5) {
+	nav li:nth-child(3),
+	nav li:nth-child(4) {
 		top: 1em;
 	}
 }

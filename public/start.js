@@ -2,7 +2,7 @@
 * Initial script for https://matthias.beitl.net/
 */
 
-(function() {
+(function(document, navigator) {
 	"use strict";
 
 	if (navigator.serviceWorker) {
@@ -25,4 +25,4 @@
 		}
 	}
 
-})();
+})(document, navigator);
