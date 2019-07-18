@@ -1,0 +1,3 @@
+# Redirect domain aliases to primary domain
+https://www.beitl.net/* https://matthias.beitl.net/:splat 301!
+https://beitl.net/* https://matthias.beitl.net/:splat 301!
