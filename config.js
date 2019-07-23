@@ -18,7 +18,7 @@ module.exports = function () {
 	});
 
 	var downloads = [
-		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2018-12.pdf"},
+		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2019-06.pdf"},
 		{title: "vCard", type: "text/vcard", href: "/downloads/matthias-beitl.vcf"}
 	];
 	downloads.forEach(function (download) {
@@ -27,7 +27,7 @@ module.exports = function () {
 			download.src = "data:text/vcard;charset=utf-8," + encodeURIComponent(new Buffer(content).toString());
 		}
 	});
-	
+
 	var pages = {
 		"/": {},
 		"/404": {noindex: "<i>404</i> Page not found"}
