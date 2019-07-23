@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:2.1
+N:Zöchling;Matthias
+FN:Matthias Zöchling
+ROLE:Web Developer
+PHOTO;JPEG:https://cssence.com/about/photo.jpg
+ADR;WORK:;;;Vienna;;1100;Austria
+TEL;HOME;VOICE:+4367761794478
+REV:20190723T154100Z
+END:VCARD

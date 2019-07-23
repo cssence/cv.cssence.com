@@ -1,11 +1,11 @@
 {
   "name": "@cssence/resume",
-  "homepage": "https://matthias.beitl.net/",
+  "homepage": "https://cv.cssence.com/",
   "version": "5.0.0",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cssence/matthias.beitl.net.git"
+    "url": "git://github.com/cssence/cv.cssence.com.git"
   },
   "scripts": {
     "build": "grunt"

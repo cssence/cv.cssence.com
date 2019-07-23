@@ -54,7 +54,6 @@ svg {
 		font: 11pt/1.25 serif;
 	}
 	main::after {
-		/* http://chart.apis.google.com/chart?chs=80x80&cht=qr&chl=https%3A%2F%2Fmatthias.beitl.net%2F */
 		content: url("qr.png");
 		position: absolute;
 		top: 1em;

@@ -1,5 +1,5 @@
 /**
-* Service Worker for https://matthias.beitl.net/
+* Service Worker
 *
 * Shoutout to @adactio, @jaffathecake and @mxbck, as this was based on
 * https://gist.github.com/adactio/fbaa3a5952774553f5e7,
@@ -9,8 +9,6 @@
 * The latest update however is based on
 * https://serviceworke.rs/strategy-cache-and-update_service-worker_doc.html
 */
-
-/*jshint esversion: 6 */
 
 const CACHE = "page";
 

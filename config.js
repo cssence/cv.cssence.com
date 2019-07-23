@@ -18,8 +18,8 @@ module.exports = function () {
 	});
 
 	var downloads = [
-		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-beitl_2019-06.pdf"},
-		{title: "vCard", type: "text/vcard", href: "/downloads/matthias-beitl.vcf"}
+		{title: "Résumé", type: "application/pdf", href: "/downloads/cv_matthias-zoechling_2019-07.pdf"},
+		{title: "vCard", type: "text/vcard", href: "/downloads/matthias-zoechling.vcf"}
 	];
 	downloads.forEach(function (download) {
 		if (download.type === "text/vcard") {

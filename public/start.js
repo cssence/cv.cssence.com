@@ -1,5 +1,5 @@
 /**
-* Initial script for https://matthias.beitl.net/
+* Initial script
 */
 
 (function(document, navigator) {
