@@ -1,8 +1,0 @@
-nav.segment#elsewhere
-	h2.print Links
-	ul
-		each bookmark in bookmarks
-			- var classNames = [bookmark.id].concat((bookmark.className || "").split(" ")).join(" ")
-			li
-				a(class=classNames, href=bookmark.url, rel=bookmark.rel)
-					!= bookmark.iconRaw + " " + bookmark.title

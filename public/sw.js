@@ -10,29 +10,33 @@
 * https://serviceworke.rs/strategy-cache-and-update_service-worker_doc.html
 */
 
-const CACHE = "page";
+const CACHE = 'page';
 
-self.addEventListener("install", event => {
+self.addEventListener('install', event => {
 	event.waitUntil(precache());
 });
 
-self.addEventListener("fetch", event => {
-	event.respondWith(fromCache(event.request).catch(() => fromCache("./")));
+self.addEventListener('fetch', event => {
+	event.respondWith(fromCache(event.request).catch(() => fromCache('./')));
 	event.waitUntil(update(event.request));
 });
 
-function precache() {
-	return caches.open(CACHE).then(cache => cache.addAll([
-			"./",
-			"./photo.jpg"
-		])
-	);
+async function precache() {
+	const cache = await caches.open(CACHE);
+	return await cache.addAll([
+		'./',
+		'./photo.jpg'
+	]);
 }
 
-function fromCache(request) {
-	return caches.open(CACHE).then(cache => cache.match(request).then(match => match || Promise.reject("no-match")));
+async function fromCache(request) {
+	const cache = await caches.open(CACHE);
+	const match = await cache.match(request);
+	return match || Promise.reject('no-match');
 }
 
-function update(request) {
-	return caches.open(CACHE).then(cache => fetch(request).then(response => cache.put(request, response)));
+async function update(request) {
+	const cache = await caches.open(CACHE);
+	const response = await fetch(request);
+	return await cache.put(request, response);
 }
