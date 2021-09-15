@@ -191,7 +191,7 @@ footer {
 		text-align: center;
 		visibility: visible;
 	}
-	#education a[href]::after {
+	#education + ul a[href]::after {
 		content: " [" attr(href) "]";
 		font-size: .75rem;
 	}
@@ -393,12 +393,12 @@ footer {
 	}
 }
 @media screen and (min-width: 46em) {
-	#languages {
+	main > section:nth-last-child(2) {
 		width: 33.3333%;
 		margin-top: -1.5rem;
 		float: right;
 	}
-	#competences {
+	main > section:last-child {
 		width: calc(66.6667% - var(--p));
 	}
 	footer {
