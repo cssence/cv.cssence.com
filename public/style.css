@@ -34,7 +34,7 @@ h1 {
 	white-space: nowrap;
 }
 h1::after {
-	content: " (" attr(data-pronoun) ")";
+	content: " " attr(data-pronoun);
 	position: absolute;
 }
 h2 {
@@ -90,9 +90,6 @@ nav ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-}
-nav li:last-child {
-	display: none;
 }
 footer {
 	font-size: .875rem;
@@ -157,6 +154,9 @@ footer {
 		position: absolute;
 		top: 2.25rem;
 		right: .1rem;
+	}
+	nav li:last-child {
+		display: none;
 	}
 	nav a {
 		display: grid;
@@ -224,6 +224,9 @@ footer {
 		background-color: #000;
 		scroll-behavior: smooth;
 	}
+	body {
+		overflow: hidden scroll;
+	}
 	body::before {
 		content: "";
 		display: block;
@@ -244,7 +247,7 @@ footer {
 	}
 	h1 {
 		font-family: inherit;
-		font-size: 187.5%;
+		font-size: 175%;
 	}
 	h1::after {
 		transform: translate(.25em, .625em);
@@ -315,13 +318,25 @@ footer {
 		font-size: .875rem;
 	}
 	nav {
+		---p: calc(var(--p) - 1.25rem);
+		overflow: auto hidden;
+		grid-template-columns: var(---p) 1fr var(---p);
+		padding-right: 0;
+		padding-left: 0;
 		color: #fff;
 		text-align: center;
 	}
+	nav,
 	nav ul {
 		display: grid;
-		grid-auto-columns: 1fr;
 		grid-auto-flow: column;
+	}
+	nav::before,
+	nav::after {
+		content: "";
+	}
+	nav ul {
+		grid-auto-columns: 28vw;
 	}
 	nav li {
 		position: relative;
@@ -391,6 +406,9 @@ footer {
 		--b: 85vw;
 		--p: 4rem;
 	}
+	nav ul {
+		grid-auto-columns: 1fr;
+	}
 }
 @media screen and (min-width: 46em) {
 	main > section:nth-last-child(2) {
@@ -405,9 +423,6 @@ footer {
 		display: flex;
 		flex-direction: row-reverse;
 		justify-content: space-between;
-	}
-	nav li:last-child {
-		display: list-item;
 	}
 }
 @media screen and (min-width: 64em) {

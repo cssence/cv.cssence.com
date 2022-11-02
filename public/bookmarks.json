@@ -1,7 +1,8 @@
 [
 	{"url": "https://cssence.com/", "name": "Website", "color": "#d34b6c", "icon": "https://cv.cssence.com/icon-cssence.svg"},
-	{"url": "https://twitter.com/cssence", "name": "Twitter", "color": "#1da1f2", "icon": "https://cv.cssence.com/icon-twitter.svg"},
-	{"url": "https://github.com/cssence", "name": "GitHub", "color": "#444", "icon": "https://cv.cssence.com/icon-github.svg"},
 	{"url": "https://codepen.io/cssence/", "name": "CodePen", "color": "#444", "icon": "https://cv.cssence.com/icon-codepen.svg"},
+	{"url": "https://github.com/cssence", "name": "GitHub", "color": "#444", "icon": "https://cv.cssence.com/icon-github.svg"},
+	{"url": "https://mas.to/@CSSence", "name": "Mastodon", "color": "#595aff", "icon": "https://cv.cssence.com/icon-mastodon.svg"},
+	{"url": "https://twitter.com/CSSence", "name": "Twitter", "color": "#1da1f2", "icon": "https://cv.cssence.com/icon-twitter.svg"},
 	{"url": "https://cv.cssence.com/", "name": "Résumé", "color": "#bada55", "icon": "https://cv.cssence.com/icon-profile.svg"}
 ]
