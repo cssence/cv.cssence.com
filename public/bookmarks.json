@@ -3,6 +3,6 @@
 	{"url": "https://codepen.io/cssence/", "name": "CodePen", "color": "#444", "icon": "https://cv.cssence.com/icon-codepen.svg"},
 	{"url": "https://github.com/cssence", "name": "GitHub", "color": "#444", "icon": "https://cv.cssence.com/icon-github.svg"},
 	{"url": "https://mas.to/@CSSence", "name": "Mastodon", "color": "#595aff", "icon": "https://cv.cssence.com/icon-mastodon.svg"},
-	{"url": "https://twitter.com/CSSence", "name": "Twitter", "color": "#1da1f2", "icon": "https://cv.cssence.com/icon-twitter.svg"},
+	{"url": "https://bsky.app/profile/cssence.com", "name": "Bluesky", "color": "#0085ff", "icon": "https://cv.cssence.com/icon-bluesky.svg"},
 	{"url": "https://cv.cssence.com/", "name": "Résumé", "color": "#bada55", "icon": "https://cv.cssence.com/icon-profile.svg"}
 ]
