@@ -6,5 +6,5 @@ Résumé and vCard of Matthias Zöchling
 
 ## h-card
 
-https://microformats.org/wiki/h-card
+https://microformats.org/wiki/h-card  
 https://search.google.com/structured-data/testing-tool
