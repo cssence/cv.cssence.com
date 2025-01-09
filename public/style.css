@@ -309,8 +309,9 @@ footer {
 	a[href]:hover {
 		box-shadow: 0 -.3125rem #bada55 inset;
 	}
-	*:focus {
-		outline: .1875rem solid #ffa500cc !important;
+	*:focus-visible {
+		outline: .1875rem double #111 !important;
+		box-shadow: 0 0 0 .25rem orange !important;
 	}
 	summary {
 		width: max-content;
